@@ -14,11 +14,13 @@ Next.js marketing site for `www.dailywala.in`.
 Use these build settings for the connected Git repository:
 
 - Build command: leave empty
-- Deploy command: `npm run deploy`
+- Deploy command: `npx wrangler deploy`
 - Root directory: project root
 
-Do not use `opennextjs-cloudflare deploy` by itself; it expects `.open-next/.build/open-next.config.edge.mjs`
-to already exist from `opennextjs-cloudflare build`.
+The OpenNext config is intentionally named `open-next.cloudflare.config.ts` instead of `open-next.config.ts`.
+Wrangler 4.122 auto-delegates root `open-next.config.ts` projects to `opennextjs-cloudflare deploy` before
+running the custom build hook. The custom build in `wrangler.jsonc` runs `npm run cf:build`, then Wrangler deploys
+the generated `.open-next/worker.js`.
 
 ## Pages
 
