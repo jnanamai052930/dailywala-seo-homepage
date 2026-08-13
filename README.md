@@ -7,15 +7,18 @@ Next.js marketing site for `www.dailywala.in`.
 - `npm run dev` starts local development.
 - `npm run build` creates the production Next.js build, including the standalone output used by OpenNext/Cloudflare.
 - `npm run cf:build` creates `.open-next/worker.js` for Cloudflare Workers.
-- `npm run deploy` builds the OpenNext bundle and deploys it with Wrangler.
+- `npm run deploy` builds the OpenNext bundle and deploys it with the OpenNext Cloudflare adapter.
 
 ## Cloudflare Workers Builds
 
 Use these build settings for the connected Git repository:
 
-- Build command: `npm run cf:build`
-- Deploy command: `npx wrangler deploy`
+- Build command: leave empty
+- Deploy command: `npm run deploy`
 - Root directory: project root
+
+Do not use `opennextjs-cloudflare deploy` by itself; it expects `.open-next/.build/open-next.config.edge.mjs`
+to already exist from `opennextjs-cloudflare build`.
 
 ## Pages
 
