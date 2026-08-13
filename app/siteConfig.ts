@@ -5,7 +5,8 @@ export const siteConfig = {
   domain: 'https://www.dailywala.in',
   phoneDisplay: '+91 74166 79509',
   phoneHref: 'tel:+917416679509',
-  email: 'dailywalatpt@gmail.com',
+  email: 'contact@dailywala.in',
+  supportEmail: 'support@dailywala.in',
   description:
     'DailyWala connects businesses and households with verified daily-wage workers for construction, repairs, facility support, driving, and domestic services.',
   addressLocality: 'Tirupati',

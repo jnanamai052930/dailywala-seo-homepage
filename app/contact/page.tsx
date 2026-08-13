@@ -19,6 +19,19 @@ export default function ContactPage() {
       name: siteConfig.name,
       telephone: siteConfig.phoneDisplay,
       email: siteConfig.email,
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          contactType: 'general enquiries',
+          email: siteConfig.email,
+          telephone: siteConfig.phoneDisplay,
+        },
+        {
+          '@type': 'ContactPoint',
+          contactType: 'customer support',
+          email: siteConfig.supportEmail,
+        },
+      ],
     },
   };
 
@@ -39,6 +52,7 @@ export default function ContactPage() {
             <h2><DailyWalaWordmark className="inline-wordmark" /> support</h2>
             <a href={siteConfig.phoneHref}>{siteConfig.phoneDisplay}</a>
             <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+            <a href={`mailto:${siteConfig.supportEmail}`}>{siteConfig.supportEmail}</a>
             <p>{siteConfig.addressLocality}, India</p>
           </div>
           <form className="contact-form" action={`mailto:${siteConfig.email}`} method="post" encType="text/plain">
