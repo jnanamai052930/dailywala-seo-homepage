@@ -1,11 +1,11 @@
 # DailyWala Marketing Site
 
-Static-export Next.js site for `www.dailywala.in`.
+Next.js marketing site for `www.dailywala.in`.
 
 ## Scripts
 
 - `npm run dev` starts local development.
-- `npm run build` creates the static export in `out/`.
+- `npm run build` creates the production Next.js build, including the standalone output used by OpenNext/Cloudflare.
 
 ## Pages
 
