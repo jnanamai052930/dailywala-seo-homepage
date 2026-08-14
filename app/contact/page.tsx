@@ -9,6 +9,26 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const emailSubject = 'DailyWala enquiry';
+  const emailBody = [
+    'Hello DailyWala team,',
+    '',
+    'Name:',
+    'Phone:',
+    'Email (optional):',
+    'Location:',
+    'Work or service needed:',
+    'Preferred date:',
+    '',
+    'Message:',
+  ].join('\n');
+  const encodedEmail = encodeURIComponent(siteConfig.email);
+  const encodedSubject = encodeURIComponent(emailSubject);
+  const encodedBody = encodeURIComponent(emailBody);
+  const mailAppHref = `mailto:${siteConfig.email}?subject=${encodedSubject}&body=${encodedBody}`;
+  const gmailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodedEmail}&su=${encodedSubject}&body=${encodedBody}`;
+  const outlookHref = `https://outlook.office.com/mail/deeplink/compose?to=${encodedEmail}&subject=${encodedSubject}&body=${encodedBody}`;
+
   const contactPage = {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
@@ -51,25 +71,28 @@ export default function ContactPage() {
           <div className="contact-details">
             <h2><DailyWalaWordmark className="inline-wordmark" /> support</h2>
             <a href={siteConfig.phoneHref}>{siteConfig.phoneDisplay}</a>
-            <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+            <a href={mailAppHref}>{siteConfig.email}</a>
             <a href={`mailto:${siteConfig.supportEmail}`}>{siteConfig.supportEmail}</a>
             <p>{siteConfig.addressLocality}, India</p>
           </div>
-          <form className="contact-form" action={`mailto:${siteConfig.email}`} method="post" encType="text/plain">
-            <label>
-              Full name
-              <input name="name" autoComplete="name" required />
-            </label>
-            <label>
-              Phone
-              <input name="phone" autoComplete="tel" inputMode="tel" required />
-            </label>
-            <label>
-              Message
-              <textarea name="message" rows={5} />
-            </label>
-            <button type="submit">Send enquiry</button>
-          </form>
+          <div className="contact-action-panel">
+            <h2>Direct contact</h2>
+            <a className="primary-action contact-action-button" href={siteConfig.phoneHref}>
+              <span className="contact-action-icon" aria-hidden="true">tel</span>
+              Call DailyWala
+            </a>
+            <details className="email-options">
+              <summary className="secondary-action contact-action-button">
+                <span className="contact-action-icon" aria-hidden="true">@</span>
+                Email DailyWala
+              </summary>
+              <div className="email-choice-grid">
+                <a href={gmailHref} target="_blank" rel="noreferrer">Gmail</a>
+                <a href={outlookHref} target="_blank" rel="noreferrer">Outlook</a>
+                <a href={mailAppHref}>Mail app</a>
+              </div>
+            </details>
+          </div>
         </section>
       </main>
       <SiteFooter />

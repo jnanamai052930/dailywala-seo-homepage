@@ -45,8 +45,8 @@ export default function HomePage() {
           <div><strong>Transparent wages</strong><span>Clear daily-rate selection</span></div>
         </section>
 
-        <section className="section two-column">
-          <div>
+        <section className="section two-column home-audience-section">
+          <div className="home-audience-copy">
             <p className="eyebrow">Workers for construction, sites, homes, and businesses</p>
             <h2 className="home-intro-heading"><DailyWalaWordmark className="inline-wordmark" /> brings hiring and work discovery into one flow</h2>
             <p>

@@ -53,7 +53,7 @@ export default function ServicesPage() {
 
         <section className="section service-groups">
           {serviceGroups.map((group) => (
-            <article className="service-card" key={group.title}>
+            <article className={`service-card service-group-card service-group-card-${group.slug}`} key={group.title}>
               <h2><Link href={serviceHref(group.slug)}>{group.title}</Link></h2>
               <ul>
                 {group.items.map((item) => (

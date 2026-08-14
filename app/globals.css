@@ -421,6 +421,18 @@ button:hover {
   font-size: 1.06rem;
 }
 
+.home-audience-section {
+  grid-template-columns: minmax(220px, 0.62fr) minmax(0, 1.38fr);
+}
+
+.home-audience-copy {
+  max-width: 430px;
+}
+
+.home-audience-copy .eyebrow {
+  max-width: 330px;
+}
+
 .home-intro-heading {
   font-size: 18px;
   line-height: 1.45;
@@ -435,6 +447,7 @@ button:hover {
 
 .role-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
 }
 
 .service-groups {
@@ -479,6 +492,21 @@ button:hover {
 .contractor-card,
 .worker-card {
   position: relative;
+}
+
+.customer-card {
+  border-color: rgba(249, 115, 22, 0.2);
+  background: linear-gradient(180deg, #fff7ed 0%, #fffdf7 100%);
+}
+
+.contractor-card {
+  border-color: rgba(39, 64, 139, 0.18);
+  background: linear-gradient(180deg, #eff6ff 0%, #f8fbff 100%);
+}
+
+.worker-card {
+  border-color: rgba(22, 163, 74, 0.18);
+  background: linear-gradient(180deg, #f0fdf4 0%, #fbfffc 100%);
 }
 
 .customer-card::before,
@@ -589,6 +617,21 @@ button:hover {
   background: linear-gradient(180deg, #f0fdf4, #ffffff);
 }
 
+.service-group-card-construction-and-site-work {
+  border-color: rgba(202, 138, 4, 0.2);
+  background: linear-gradient(180deg, #fffbeb 0%, #fffdf7 100%);
+}
+
+.service-group-card-repairs-and-maintenance {
+  border-color: rgba(8, 145, 178, 0.16);
+  background: linear-gradient(180deg, #ecfeff 0%, #f8feff 100%);
+}
+
+.service-group-card-operations-and-support {
+  border-color: rgba(124, 58, 237, 0.14);
+  background: linear-gradient(180deg, #f5f3ff 0%, #fbfaff 100%);
+}
+
 .process-list {
   display: grid;
   gap: 14px;
@@ -601,21 +644,37 @@ button:hover {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(255, 251, 235, 0.94) 0%, rgba(255, 255, 255, 0.88) 50%, rgba(254, 243, 199, 0.82) 100%),
-    url('/images/services-line-sketch.png') center / cover no-repeat;
+    linear-gradient(90deg, rgba(17, 24, 39, 0.86) 0%, rgba(17, 24, 39, 0.7) 48%, rgba(17, 24, 39, 0.18) 100%),
+    linear-gradient(0deg, rgba(133, 77, 14, 0.18), rgba(133, 77, 14, 0.18)),
+    url('/images/services-hero-sketch.png') center / cover no-repeat;
+  color: #ffffff;
 }
 
 .sketch-process-band::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.22);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0));
   pointer-events: none;
 }
 
 .sketch-process-band > * {
   position: relative;
   z-index: 1;
+}
+
+.sketch-process-band h2 {
+  color: #ffffff;
+}
+
+.sketch-process-band .eyebrow {
+  color: #fef3c7;
+}
+
+.sketch-process-band .process-list li {
+  border-color: rgba(255, 255, 255, 0.26);
+  border-left-color: var(--brand-hi);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .process-list li {
@@ -740,9 +799,9 @@ button:hover {
   font-weight: 800;
 }
 
-.contact-form {
+.contact-action-panel {
   display: grid;
-  gap: 16px;
+  gap: 18px;
   padding: 32px;
   border: 1px solid var(--line);
   border-radius: 24px;
@@ -750,35 +809,72 @@ button:hover {
   box-shadow: var(--shadow-md);
 }
 
-.contact-form label {
-  display: grid;
-  gap: 8px;
-  color: var(--ink-soft);
-  font-size: 0.94rem;
-  font-weight: 800;
+.contact-action-panel h2 {
+  margin-bottom: 0;
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact-action-button {
   width: 100%;
-  border: 1px solid #d6d3d1;
+  gap: 10px;
+}
+
+.contact-action-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 0.76rem;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.secondary-action .contact-action-icon {
+  background: rgba(202, 138, 4, 0.14);
+  color: var(--brand-dark);
+}
+
+.email-options {
+  display: grid;
+  gap: 14px;
+}
+
+.email-options summary {
+  list-style: none;
+}
+
+.email-options summary::-webkit-details-marker {
+  display: none;
+}
+
+.email-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.email-choice-grid a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1px solid rgba(229, 231, 235, 0.9);
   border-radius: 14px;
   background: #ffffff;
-  color: var(--ink);
-  font: inherit;
-  padding: 13px 14px;
-  outline: none;
-  transition: border-color 160ms ease, box-shadow 160ms ease;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  font-weight: 900;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+.email-choice-grid a:hover {
   border-color: var(--brand);
-  box-shadow: 0 0 0 4px rgba(253, 224, 71, 0.25);
-}
-
-.contact-form textarea {
-  resize: vertical;
+  color: var(--brand-dark);
+  transform: translateY(-1px);
 }
 
 .site-footer {
@@ -983,6 +1079,10 @@ button:hover {
     grid-template-columns: 1fr;
   }
 
+  .home-audience-copy {
+    max-width: none;
+  }
+
   .section-heading,
   .contact-band,
   .site-footer {
@@ -1052,6 +1152,10 @@ button:hover {
   .secondary-action,
   button {
     width: 100%;
+  }
+
+  .email-choice-grid {
+    grid-template-columns: 1fr;
   }
 }
 
