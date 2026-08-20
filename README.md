@@ -29,6 +29,16 @@ the generated `.open-next/worker.js`.
 - `/contact/` contact page
 - `/open/?role=customer` and `/open/?role=worker` app handoff pages
 
+## Contact Form Email
+
+The contact form posts to `/api/contact/` and sends through Gmail SMTP with Nodemailer, matching the Jnanam website's delivery path. Configure these as encrypted secrets under the deployed Worker's **Settings > Variables and Secrets**:
+
+- `GMAIL_USER`: the Google Workspace sender, normally `contact@dailywala.in`
+- `GMAIL_APP_PASSWORD`: a Google App Password for that account (store as a secret)
+- `CONTACT_TO_EMAIL`: the receiving address, normally `contact@dailywala.in`
+
+Google 2-Step Verification must be enabled before creating an App Password. The visitor's email is used only as the message `Reply-To` address. `keep_vars` is enabled in `wrangler.jsonc` so Git deployments preserve dashboard-managed secrets.
+
 ## Deep-Link Production Checklist
 
 The site already centralizes app links in `app/siteConfig.ts`.

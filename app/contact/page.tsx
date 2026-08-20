@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { DailyWalaWordmark, JsonLd, SiteFooter, SiteHeader } from '../components';
 import { siteConfig } from '../siteConfig';
+import { ContactForm } from './ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -75,8 +76,15 @@ export default function ContactPage() {
             <a href={`mailto:${siteConfig.supportEmail}`}>{siteConfig.supportEmail}</a>
             <p>{siteConfig.addressLocality}, India</p>
           </div>
-          <div className="contact-action-panel">
-            <h2>Direct contact</h2>
+          <ContactForm />
+        </section>
+
+        <section className="section direct-contact-section" aria-labelledby="direct-contact-title">
+          <div>
+            <p className="eyebrow">Prefer to contact us directly?</p>
+            <h2 id="direct-contact-title">Call or email DailyWala</h2>
+          </div>
+          <div className="direct-contact-actions">
             <a className="primary-action contact-action-button" href={siteConfig.phoneHref}>
               <span className="contact-action-icon" aria-hidden="true">tel</span>
               Call DailyWala

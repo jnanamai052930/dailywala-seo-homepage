@@ -4,6 +4,7 @@
   "name": "dailywala-seo-homepage",
   "compatibility_date": "2026-08-13",
   "compatibility_flags": ["nodejs_compat"],
+  "keep_vars": true,
   "build": {
     "command": "npm run cf:build"
   },
