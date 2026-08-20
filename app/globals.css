@@ -911,103 +911,6 @@ button:hover {
   color: #be123c;
 }
 
-.direct-contact-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  padding-top: 0;
-}
-
-.direct-contact-section h2,
-.direct-contact-section .eyebrow {
-  margin-bottom: 0;
-}
-
-.direct-contact-actions {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.contact-action-panel {
-  display: grid;
-  gap: 18px;
-  padding: 32px;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: var(--shadow-md);
-}
-
-.contact-action-panel h2 {
-  margin-bottom: 0;
-}
-
-.contact-action-button {
-  width: 100%;
-  gap: 10px;
-}
-
-.contact-action-icon {
-  display: inline-grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.18);
-  font-size: 0.76rem;
-  font-weight: 900;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.secondary-action .contact-action-icon {
-  background: rgba(202, 138, 4, 0.14);
-  color: var(--brand-dark);
-}
-
-.email-options {
-  display: grid;
-  gap: 14px;
-}
-
-.email-options summary {
-  list-style: none;
-}
-
-.email-options summary::-webkit-details-marker {
-  display: none;
-}
-
-.email-choice-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.email-choice-grid a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 46px;
-  padding: 12px 14px;
-  border: 1px solid rgba(229, 231, 235, 0.9);
-  border-radius: 14px;
-  background: #ffffff;
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-  font-weight: 900;
-  box-shadow: var(--shadow-sm);
-  transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
-}
-
-.email-choice-grid a:hover {
-  border-color: var(--brand);
-  color: var(--brand-dark);
-  transform: translateY(-1px);
-}
-
 .site-footer {
   display: flex;
   align-items: center;
@@ -1216,7 +1119,6 @@ button:hover {
 
   .section-heading,
   .contact-band,
-  .direct-contact-section,
   .site-footer {
     align-items: flex-start;
     flex-direction: column;
@@ -1286,10 +1188,6 @@ button:hover {
     width: 100%;
   }
 
-  .email-choice-grid {
-    grid-template-columns: 1fr;
-  }
-
   .contact-form-grid {
     grid-template-columns: 1fr;
   }
@@ -1303,15 +1201,6 @@ button:hover {
     padding: 24px;
   }
 
-  .direct-contact-actions {
-    width: 100%;
-    flex-direction: column;
-  }
-
-  .direct-contact-actions > *,
-  .direct-contact-actions details {
-    width: 100%;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

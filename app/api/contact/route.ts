@@ -195,6 +195,17 @@ export async function POST(request: Request) {
     return json('Thank you. Your enquiry has been sent to DailyWala.', 200);
   } catch (error) {
     console.error('Unable to send contact enquiry email.', error);
-    return json('We could not send your enquiry. Please call or email DailyWala directly.', 502);
+    const smtpError = error as { code?: unknown; responseCode?: unknown };
+    const errorCode = typeof smtpError?.code === 'string' ? smtpError.code : 'SMTP_SEND_FAILED';
+    const smtpStatus = typeof smtpError?.responseCode === 'number' ? smtpError.responseCode : undefined;
+
+    return Response.json(
+      {
+        message: 'We could not send your enquiry. Please call or email DailyWala directly.',
+        errorCode,
+        ...(smtpStatus ? { smtpStatus } : {}),
+      },
+      { status: 502, headers: { 'Cache-Control': 'no-store' } },
+    );
   }
 }
