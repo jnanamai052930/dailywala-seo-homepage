@@ -6,19 +6,21 @@ import { siteConfig } from './siteConfig';
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.domain),
   title: {
-    default: 'DailyWala | Verified Daily-Wage Workers',
+    default: 'Find & Hire Workers Near You | DailyWala',
     template: '%s | DailyWala',
   },
   description: siteConfig.description,
   keywords: [
     'DailyWala',
-    'daily wage workers',
-    'verified workers',
-    'hire electrician',
-    'hire plumber',
-    'construction workers',
-    'worker app India',
-    'Tirupati labour services',
+    'workers near me',
+    'labour near me',
+    'daily wage workers near me',
+    'construction workers near me',
+    'maid near me',
+    'cook near me',
+    'electrician near me',
+    'hire workers near me',
+    'manpower near me',
   ],
   alternates: {
     canonical: '/',
@@ -27,15 +29,15 @@ export const metadata: Metadata = {
     type: 'website',
     url: '/',
     siteName: siteConfig.name,
-    title: 'DailyWala | Workforce Simplified',
+    title: 'DailyWala — Hyperlocal Workers, On Demand',
     description: siteConfig.description,
-    images: [{ url: '/images/landing-labour-worker.png', width: 1200, height: 630, alt: 'DailyWala verified workforce platform' }],
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'DailyWala — Find and hire workers near you' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DailyWala | Workforce Simplified',
+    title: 'DailyWala — Hyperlocal Workers, On Demand',
     description: siteConfig.description,
-    images: ['/images/landing-labour-worker.png'],
+    images: ['/og.png'],
   },
   icons: {
     icon: '/images/dailywala-favicon.png',
@@ -44,7 +46,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0f766e',
+  themeColor: '#12211b',
   colorScheme: 'light',
 };
 

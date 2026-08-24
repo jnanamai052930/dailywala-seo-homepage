@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ContactBand, DailyWalaWordmark, JsonLd, SiteFooter, SiteHeader } from '../../components';
+import { ContactBand, JsonLd, SiteFooter, SiteHeader } from '../../components';
 import { siteConfig } from '../../siteConfig';
 import { findServicePage, relatedSkillsFor, serviceHref, servicePages } from '../serviceCatalog';
 
@@ -17,17 +17,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const page = findServicePage(slug);
   if (!page) return {};
-  const title = page.kind === 'group' ? page.title : `${page.title} Workers`;
+  const title = page.kind === 'group' ? `${page.title} Near You` : `Find ${page.title} Near You`;
   return {
     title,
-    description: page.summary,
-    keywords: ['DailyWala', page.title, ...page.keywords],
+    description: `${page.summary} Share the work location, date, and worker count with DailyWala.`,
+    keywords: ['DailyWala', 'workers near me', page.title, ...page.keywords],
     alternates: { canonical: serviceHref(page.slug) },
     openGraph: {
       title: `${title} | DailyWala`,
-      description: page.summary,
+      description: `${page.summary} Individual and bulk requirements supported.`,
       url: serviceHref(page.slug),
-      images: [{ url: '/images/services-line-sketch.png', width: 1200, height: 630, alt: `${page.title} workers` }],
     },
   };
 }
@@ -47,35 +46,44 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       name: siteConfig.name,
       url: siteConfig.domain,
     },
-    areaServed: {
-      '@type': 'Country',
-      name: 'India',
-    },
     url: `${siteConfig.domain}${serviceHref(page.slug)}`,
+    audience: [
+      { '@type': 'Audience', audienceType: 'Households' },
+      { '@type': 'Audience', audienceType: 'Contractors and businesses' },
+    ],
   };
 
   return (
     <>
       <SiteHeader />
       <main>
-        <section className="hero compact-hero service-detail-hero">
+        <section className="service-page-hero">
           <div className="hero-copy">
-            <p className="eyebrow">{page.kind === 'group' ? 'Service category' : page.groupTitle}</p>
-            <h1>{page.title}</h1>
+            <p className="hero-kicker"><span aria-hidden="true" /> {page.kind === 'group' ? 'Workforce category' : page.groupTitle}</p>
+            <h1>{page.kind === 'group' ? page.title : `Find ${page.title} Near You`}</h1>
             <p>{page.summary}</p>
+            <div className="hero-actions">
+              <a className="primary-action" href="/open/?role=customer">Check nearby workers <span aria-hidden="true">→</span></a>
+              <Link className="secondary-action on-dark" href="/contact/">Post requirement</Link>
+            </div>
           </div>
         </section>
 
         <section className="section service-detail-layout">
           <article className="service-detail-copy">
-            <p className="eyebrow">{page.kind === 'group' ? 'DailyWala category' : 'DailyWala service'}</p>
+            <p className="eyebrow">Location-first worker discovery</p>
             <h2>
-              Book {page.title.toLowerCase()} through <DailyWalaWordmark className="inline-wordmark" />
+              Hire {page.title.toLowerCase()} for one job, recurring work, or a crew
             </h2>
             <p>
-              Share your location, preferred date, worker count, and work details. DailyWala helps organize verified
-              workers for daily-wage work with clear request tracking and follow-up.
+              Share the work location, preferred date or shift, worker count, and task details. DailyWala helps narrow
+              suitable nearby workers using available skill, sub-skill, experience, rating, rate, and availability
+              information where supported by worker profiles and application data.
             </p>
+            <div className="service-assurance">
+              <strong>Private by design</strong>
+              <span>Worker residential addresses, phone numbers, and precise private locations are not presented as public discovery data.</span>
+            </div>
             <div className="service-keywords" aria-label="Related search terms">
               {page.keywords.map((keyword) => (
                 <span key={keyword}>{keyword}</span>
@@ -84,7 +92,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           </article>
 
           <aside className="service-detail-card" aria-labelledby="related-services-title">
-            <h2 id="related-services-title">{page.kind === 'group' ? 'Skills in this category' : 'Related services'}</h2>
+            <p className="eyebrow">Book by service</p>
+            <h2 id="related-services-title">{page.kind === 'group' ? 'Workers in this category' : 'Related nearby workers'}</h2>
             <ul>
               {related.map((item) => (
                 <li key={item.slug}>
@@ -93,6 +102,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               ))}
             </ul>
             <Link className="secondary-action" href="/services/">View all services</Link>
+            <a className="primary-action" href="/open/?role=customer">Find workers near me</a>
           </aside>
         </section>
 

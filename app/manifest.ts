@@ -6,11 +6,11 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'DailyWala',
     short_name: 'DailyWala',
-    description: 'Verified daily-wage workforce platform.',
+    description: 'Find and hire nearby workers by skill, location, availability, and requirement.',
     start_url: '/',
     display: 'standalone',
     background_color: '#f8fafc',
-    theme_color: '#0f766e',
+    theme_color: '#12211b',
     icons: [
       {
         src: '/images/dailywala-app-icon.png',

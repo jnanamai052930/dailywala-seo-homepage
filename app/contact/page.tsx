@@ -5,7 +5,7 @@ import { ContactForm } from './ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Contact DailyWala for verified daily-wage workers, worker registration, customer onboarding, and app support.',
+  description: 'Contact DailyWala for nearby worker hiring, bulk workforce requirements, worker registration, customer onboarding, and app support.',
   alternates: { canonical: '/contact/' },
 };
 

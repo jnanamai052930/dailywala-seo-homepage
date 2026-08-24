@@ -1,7 +1,25 @@
 import Link from 'next/link';
-import { ContactBand, DailyWalaWordmark, JsonLd, SiteFooter, SiteHeader } from './components';
+import { ContactBand, JsonLd, SiteFooter, SiteHeader } from './components';
 import { siteConfig } from './siteConfig';
-import { serviceHref, serviceSkills } from './services/serviceCatalog';
+import { featuredServices, serviceGroups, serviceHref } from './services/serviceCatalog';
+
+const useCases = [
+  { label: 'Home', need: 'Need a maid near me', detail: 'One-time or recurring household help' },
+  { label: 'Repair', need: 'Need an AC technician today', detail: 'Nearby technical and maintenance support' },
+  { label: 'Restaurant', need: 'Need a cook/master', detail: 'Kitchen and hospitality workforce' },
+  { label: 'Construction', need: 'Need 15 workers tomorrow', detail: 'Site crews and skilled trades' },
+  { label: 'Business', need: 'Need 10 facility cleaners', detail: 'Individual or bulk workforce supply' },
+  { label: 'Logistics', need: 'Need drivers and loaders', detail: 'Transport and material movement support' },
+];
+
+const differentiators = [
+  ['01', 'Hyperlocal discovery', 'Start with the work location and discover workers relevant to the requirement nearby.'],
+  ['02', 'Broad workforce marketplace', 'Construction, household, hospitality, technical, facility, logistics, and business workforce in one place.'],
+  ['03', 'Availability-led matching', 'See availability and fulfilment signals where supported, so a promising profile can become a confirmed assignment.'],
+  ['04', 'One worker or a full crew', 'Book for one job, a recurring requirement, or a bulk workforce need across sites and operations.'],
+  ['05', 'Structured worker discovery', 'Evaluate available profile details such as skills, sub-skills, experience, rating, and rate where provided.'],
+  ['06', 'Assisted matching', 'Describe the requirement in plain language and let DailyWala help narrow suitable nearby worker options.'],
+];
 
 export default function HomePage() {
   const organization = {
@@ -12,95 +30,174 @@ export default function HomePage() {
     email: siteConfig.email,
     telephone: siteConfig.phoneDisplay,
     description: siteConfig.description,
-    areaServed: {
-      '@type': 'Country',
-      name: 'India',
-    },
+    knowsAbout: serviceGroups.map((group) => group.title),
+  };
+
+  const website = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteConfig.name,
+    url: siteConfig.domain,
+    description: siteConfig.description,
   };
 
   return (
     <>
       <SiteHeader />
       <main>
-        <section className="hero home-hero">
-          <div className="hero-copy">
-            <p className="eyebrow">Verified daily-wage workforce</p>
-            <h1>
-              <DailyWalaWordmark className="hero-wordmark on-dark-wordmark" />
-            </h1>
-            <p>
-              Hire skilled, semi-skilled, and support workers through a simple platform built for transparent wages,
-              verified profiles, and faster workforce coordination.
+        <section className="new-hero">
+          <div className="new-hero-copy">
+            <p className="hero-kicker"><span aria-hidden="true" /> Hyperlocal workers · On demand</p>
+            <h1>Find &amp; Hire Workers <em>Near You</em></h1>
+            <p className="hero-lede">
+              From construction workers and maids to cooks, drivers, electricians, technicians, cleaners, and security
+              staff—DailyWala helps homes, contractors, and businesses discover the right workers nearby.
             </p>
             <div className="hero-actions">
-              <a className="primary-action" href="/open/">Open DailyWala</a>
-              <Link className="secondary-action on-dark" href="/services/">View services</Link>
+              <a className="primary-action" href="/open/?role=customer">Find Workers Near Me <span aria-hidden="true">→</span></a>
+              <Link className="secondary-action" href="/contact/">Post Your Requirement</Link>
+              <a className="text-action" href="/open/?role=worker">Find Work Near You</a>
+            </div>
+            <div className="hero-proof" aria-label="DailyWala capabilities">
+              <span>Nearby workers</span><span>Multiple skills</span><span>Individual &amp; bulk hiring</span><span>Assisted matching</span>
             </div>
           </div>
+
+          <aside className="finder-card" aria-label="Find workers by location and service">
+            <div className="finder-card-head">
+              <div>
+                <p>Book by service</p>
+                <h2>What do you need?</h2>
+              </div>
+              <span className="availability-pill">Location first</span>
+            </div>
+            <div className="location-field">
+              <span className="location-mark" aria-hidden="true">⌖</span>
+              <div><small>WORK LOCATION</small><strong>Use my area or enter a locality</strong></div>
+            </div>
+            <div className="quick-services">
+              {featuredServices.slice(0, 8).map((service) => (
+                <Link href={serviceHref(service.slug)} key={service.slug}>{service.title}</Link>
+              ))}
+            </div>
+            <a className="finder-submit" href="/open/?role=customer">View workers near me <span aria-hidden="true">→</span></a>
+            <p className="privacy-note">Your precise private location and worker residential details are not shown publicly.</p>
+          </aside>
         </section>
 
-        <section className="metrics-strip" aria-label="DailyWala highlights">
-          <div><strong>Identity verified</strong><span>Worker profiles</span></div>
-          <div><strong>Skilled crews</strong><span>Construction and facility needs</span></div>
-          <div><strong>Transparent wages</strong><span>Clear daily-rate selection</span></div>
+        <section className="confidence-strip" aria-label="Structured DailyWala hiring">
+          <div><strong>Skill-led</strong><span>Choose a service and sub-skill</span></div>
+          <div><strong>Location-led</strong><span>Search around the work location</span></div>
+          <div><strong>Requirement-led</strong><span>One worker, recurring help, or a crew</span></div>
+          <div><strong>Confirmation-led</strong><span>Track matching and assignment in the app</span></div>
         </section>
 
-        <section className="section two-column home-audience-section">
-          <div className="home-audience-copy">
-            <p className="eyebrow">Workers for construction, sites, homes, and businesses</p>
-            <h2 className="home-intro-heading"><DailyWalaWordmark className="inline-wordmark" /> brings hiring and work discovery into one flow</h2>
+        <section className="section service-marketplace" id="services" aria-labelledby="service-marketplace-title">
+          <div className="section-intro wide-intro">
+            <p className="eyebrow">A workforce marketplace, not a job board</p>
+            <h2 id="service-marketplace-title">Book workers by service. Build a workforce by requirement.</h2>
             <p>
-              From site crews to home repairs and support staff, <DailyWalaWordmark className="inline-wordmark" /> keeps worker requests, availability,
-              assignment, and follow-up in a single, clear experience.
+              DailyWala brings home services and business workforce supply into one structured discovery flow. Start
+              with what needs to get done, where the work is, and how many people you need.
             </p>
           </div>
-          <div className="app-grid role-grid">
-            <article className="app-card role-card customer-card">
-              <h3>For customers</h3>
-              <p>Book verified workers for home, repair, site, and support needs with clear wages and request tracking.</p>
-            </article>
-            <article className="app-card role-card contractor-card">
-              <h3>For contractor hirers</h3>
-              <p>Organize crew requirements by trade, date, location, worker count, and fulfilment status for site work.</p>
-            </article>
-            <article className="app-card role-card worker-card">
-              <h3>For workers</h3>
-              <p>Register skills, show availability, receive job notifications, and build earning opportunities through verified work.</p>
-            </article>
+          <div className="marketplace-grid">
+            {serviceGroups.map((group, index) => (
+              <article className="marketplace-card" key={group.slug}>
+                <div className="marketplace-card-top"><span>{String(index + 1).padStart(2, '0')}</span><p>{group.items.length} services</p></div>
+                <h3><Link href={serviceHref(group.slug)}>{group.title}</Link></h3>
+                <p>{group.summary}</p>
+                <div className="service-tags">
+                  {group.items.slice(0, 4).map((item) => <Link href={serviceHref(item.slug)} key={item.slug}>{item.title}</Link>)}
+                </div>
+                <Link className="card-link" href={serviceHref(group.slug)}>Explore workforce <span aria-hidden="true">→</span></Link>
+              </article>
+            ))}
           </div>
+          <div className="center-action"><Link className="secondary-action" href="/services/">See all DailyWala services</Link></div>
         </section>
 
-        <section className="section services-preview" aria-labelledby="services-title">
-          <div className="section-heading">
-            <p className="eyebrow">Services offered</p>
-            <h2 id="services-title">Workers for daily site and home needs</h2>
-            <Link href="/services/">See all services</Link>
+        <section className="section real-needs-section" aria-labelledby="real-needs-title">
+          <div className="section-intro">
+            <p className="eyebrow">Built around real requirements</p>
+            <h2 id="real-needs-title">Urgent help today. Planned workforce tomorrow.</h2>
+            <p>DailyWala is designed around the outcome you need—not around waiting for job applications.</p>
           </div>
-          <div className="service-list">
-            {serviceSkills.slice(0, 8).map((service) => (
-              <Link key={service.slug} href={serviceHref(service.slug)}>{service.title}</Link>
+          <div className="use-case-grid">
+            {useCases.map((item) => (
+              <article className="use-case-card" key={item.label}>
+                <span>{item.label}</span>
+                <h3>“{item.need}.”</h3>
+                <p>{item.detail}</p>
+              </article>
             ))}
           </div>
         </section>
 
-        <section className="section vision-section">
-          <div className="vision-image">
-            <img src="/images/landing-mason-bricks.png" alt="Construction worker using DailyWala services" />
+        <section className="section flow-section" aria-labelledby="flow-title">
+          <div className="flow-heading">
+            <p className="eyebrow">A structured fulfilment flow</p>
+            <h2 id="flow-title">From requirement to confirmed worker</h2>
+            <p>Search, compare, select, and track in one clear journey.</p>
           </div>
-          <div>
-            <p className="eyebrow">Our vision</p>
-            <h2>Bridging the workforce gap</h2>
+          <ol className="fulfilment-flow">
+            {['Requirement', 'Work location', 'Nearby workers', 'Skill & availability', 'Selection', 'Booking', 'Confirmation'].map((step, index) => (
+              <li key={step}><span>{index + 1}</span><strong>{step}</strong></li>
+            ))}
+          </ol>
+        </section>
+
+        <section className="section difference-section" aria-labelledby="difference-title">
+          <div className="difference-heading">
+            <p className="eyebrow">The DailyWala difference</p>
+            <h2 id="difference-title">Right worker. Nearby. When you need them.</h2>
             <p>
-              <DailyWalaWordmark className="inline-wordmark" /> is designed to improve access to consistent work opportunities, predictable wages, and
-              transparent hiring for daily-wage workers and the businesses that depend on them.
+              A hyperlocal workforce marketplace for households, contractors, restaurants, facilities, and businesses.
+              Coverage and worker information shown in the app vary by location and available data.
             </p>
           </div>
+          <div className="difference-grid">
+            {differentiators.map(([number, title, description]) => (
+              <article key={number}><span>{number}</span><div><h3>{title}</h3><p>{description}</p></div></article>
+            ))}
+          </div>
+        </section>
+
+        <section className="section bulk-section" aria-labelledby="bulk-title">
+          <div className="bulk-art"><img src="/images/services-line-sketch.png" alt="DailyWala workers across electrical, plumbing, carpentry, repair, driving, security, cleaning, and facility services" /></div>
+          <div className="bulk-copy">
+            <p className="eyebrow">One worker to an entire workforce</p>
+            <h2 id="bulk-title">Hiring that scales with the requirement</h2>
+            <p>
+              Book a maid for recurring home help, an electrician for a repair, or a complete construction, cleaning,
+              hospitality, or facility crew. Share the service, work location, date, shift, and worker count.
+            </p>
+            <ul>
+              <li><strong>Individual booking</strong><span>For home, repair, and one-off requirements</span></li>
+              <li><strong>Recurring workforce</strong><span>For ongoing household or business operations</span></li>
+              <li><strong>Bulk hiring</strong><span>For sites, facilities, hotels, restaurants, and projects</span></li>
+            </ul>
+            <Link className="primary-action" href="/contact/">Discuss a workforce requirement</Link>
+          </div>
+        </section>
+
+        <section className="section search-intent-section" aria-labelledby="search-intent-title">
+          <div>
+            <p className="eyebrow">Workers near you</p>
+            <h2 id="search-intent-title">Find local workers by skill and requirement</h2>
+          </div>
+          <p>
+            Looking for labour near you, a mason near your site, a maid in your area, or technicians available nearby?
+            DailyWala helps you begin with the work location and service needed. Genuine location coverage—not thin or
+            invented locality pages—determines what can be discovered in the platform.
+          </p>
         </section>
 
         <ContactBand />
       </main>
       <SiteFooter />
       <JsonLd data={organization} />
+      <JsonLd data={website} />
     </>
   );
 }

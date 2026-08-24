@@ -1,21 +1,30 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ContactBand, DailyWalaWordmark, JsonLd, SiteFooter, SiteHeader } from '../components';
+import { ContactBand, JsonLd, SiteFooter, SiteHeader } from '../components';
 import { siteConfig } from '../siteConfig';
 import { serviceGroups, serviceHref, serviceSkills } from './serviceCatalog';
 
 export const metadata: Metadata = {
-  title: 'Services Offered',
+  title: 'Workers & Services Near You',
   description:
-    'DailyWala offers verified workers for electrical, plumbing, carpentry, masonry, welding, scaffolding, driving, security, domestic services, and appliance repair.',
+    'Find nearby construction workers, maids, cooks, electricians, plumbers, technicians, cleaners, drivers, security staff, hospitality workers, and business workforce with DailyWala.',
+  keywords: [
+    'workers near me', 'labour near me', 'hire workers near me', 'manpower near me',
+    'construction workers near me', 'maid near me', 'technician near me',
+  ],
   alternates: { canonical: '/services/' },
+  openGraph: {
+    title: 'Find Workers & Services Near You | DailyWala',
+    description: 'Book one nearby worker, recurring help, or a complete workforce by service and work location.',
+    url: '/services/',
+  },
 };
 
 export default function ServicesPage() {
   const itemList = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'DailyWala services',
+    name: 'DailyWala nearby worker services',
     itemListElement: serviceSkills.map((service, index) => ({
       '@type': 'ListItem',
       position: index + 1,
@@ -28,54 +37,75 @@ export default function ServicesPage() {
     <>
       <SiteHeader />
       <main>
-        <section className="hero compact-hero services-hero">
-          <div className="hero-copy">
-            <p className="eyebrow">Services offered</p>
-            <h1>Verified workers for everyday jobs</h1>
+        <section className="services-new-hero">
+          <div>
+            <p className="hero-kicker"><span aria-hidden="true" /> Book by service</p>
+            <h1>Find Workers &amp; Services Near You</h1>
             <p>
-              Choose the right trade, crew size, date, and wage preference for construction, maintenance, operations,
-              and household support.
+              Choose a workforce category, share the work location and requirement, then discover suitable nearby
+              workers—from one person to a complete crew.
+            </p>
+            <div className="hero-actions">
+              <a className="primary-action" href="/open/?role=customer">Find workers near me <span aria-hidden="true">→</span></a>
+              <Link className="secondary-action on-dark" href="/contact/">Request a workforce</Link>
+            </div>
+          </div>
+          <div className="services-hero-note">
+            <span>Location</span><strong>→</strong><span>Service</span><strong>→</strong><span>Worker match</span>
+          </div>
+        </section>
+
+        <section className="section service-directory" aria-labelledby="service-directory-title">
+          <div className="section-intro wide-intro">
+            <p className="eyebrow">Structured by the work to be done</p>
+            <h2 id="service-directory-title">Explore the DailyWala workforce marketplace</h2>
+            <p>
+              These services reflect the DailyWala customer experience and worker skill structure. Availability and
+              fulfilment depend on the selected location, date, requirement, and active worker supply.
             </p>
           </div>
-        </section>
 
-        <section className="section service-sketch-section" aria-labelledby="other-services-title">
-          <div>
-            <p className="eyebrow">More than construction</p>
-            <h2 id="other-services-title">Skilled help across site, repair, home, and operations work</h2>
-            <p>
-              <DailyWalaWordmark className="inline-wordmark" /> covers the trades around a job site and the supporting work around homes, offices, stores,
-              and service locations.
-            </p>
+          <div className="directory-grid">
+            {serviceGroups.map((group, index) => (
+              <article className="directory-card" key={group.slug}>
+                <header>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <div>
+                    <h2><Link href={serviceHref(group.slug)}>{group.title}</Link></h2>
+                    <p>{group.summary}</p>
+                  </div>
+                </header>
+                <div className="directory-services">
+                  {group.items.map((item) => (
+                    <Link href={serviceHref(item.slug)} key={item.slug}>
+                      <span>{item.title}</span><small>View service →</small>
+                    </Link>
+                  ))}
+                </div>
+              </article>
+            ))}
           </div>
-          <img src="/images/services-line-sketch.png" alt="Line sketches of DailyWala service workers and tools" />
         </section>
 
-        <section className="section service-groups">
-          {serviceGroups.map((group) => (
-            <article className={`service-card service-group-card service-group-card-${group.slug}`} key={group.title}>
-              <h2><Link href={serviceHref(group.slug)}>{group.title}</Link></h2>
-              <ul>
-                {group.items.map((item) => (
-                  <li key={item.slug}>
-                    <Link href={serviceHref(item.slug)}>{item.title}</Link>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </section>
-
-        <section className="section process-section">
+        <section className="section hiring-modes" aria-labelledby="hiring-modes-title">
           <div>
-            <p className="eyebrow">How it works</p>
-            <h2>From request to crew assignment</h2>
+            <p className="eyebrow">Flexible workforce fulfilment</p>
+            <h2 id="hiring-modes-title">Choose the hiring mode that fits the requirement</h2>
           </div>
-          <ol className="process-list">
-            <li><strong>Select work.</strong><span>Pick category, sub-category, location, date, and crew count.</span></li>
-            <li><strong>Choose preference.</strong><span>Compare lowest cost, good-rated value, or high-rated workers.</span></li>
-            <li><strong>Track fulfilment.</strong><span>Confirmed workers, attendance, closure, and refunds stay visible in the app.</span></li>
-          </ol>
+          <div className="hiring-mode-grid">
+            <article><span>01</span><h3>Book one worker</h3><p>For home services, repairs, driving, or a defined task.</p></article>
+            <article><span>02</span><h3>Set a recurring need</h3><p>For household help, hospitality, cleaning, security, or facility operations.</p></article>
+            <article><span>03</span><h3>Build your crew</h3><p>For construction sites, projects, restaurants, facilities, and bulk requirements.</p></article>
+          </div>
+        </section>
+
+        <section className="section privacy-section">
+          <div><p className="eyebrow">Location with privacy</p><h2>Nearby does not mean exposed</h2></div>
+          <p>
+            DailyWala uses the work location to make discovery relevant. Precise worker residential addresses, phone
+            numbers, and private location details should not be displayed publicly. Enter a locality or use your area
+            in the app to check genuine coverage and services.
+          </p>
         </section>
 
         <ContactBand />

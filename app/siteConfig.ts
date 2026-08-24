@@ -8,7 +8,7 @@ export const siteConfig = {
   email: 'contact@dailywala.in',
   supportEmail: 'support@dailywala.in',
   description:
-    'DailyWala connects businesses and households with verified daily-wage workers for construction, repairs, facility support, driving, and domestic services.',
+    'DailyWala is a hyperlocal workforce marketplace helping homes, contractors, and businesses find nearby construction, household, hospitality, technical, facility, and support workers.',
   addressLocality: 'Tirupati',
   addressCountry: 'IN',
 };
