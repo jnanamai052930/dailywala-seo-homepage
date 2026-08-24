@@ -122,7 +122,6 @@ export default function HomePage() {
           <div className="marketplace-grid">
             {serviceGroups.map((group) => (
               <article className="marketplace-card" key={group.slug}>
-                <div className="marketplace-card-top"><p>{group.items.length} services</p></div>
                 <h3><Link href={serviceHref(group.slug)}>{group.title}</Link></h3>
                 <p>{group.summary}</p>
                 <div className="service-tags">
