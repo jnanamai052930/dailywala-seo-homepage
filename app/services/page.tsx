@@ -43,7 +43,7 @@ export default function ServicesPage() {
             <h1>Find Workers &amp; Services Near You</h1>
             <p>
               Choose a workforce category, share the work location and requirement, then discover suitable nearby
-              workers—from one person to a complete crew.
+              workers - from one person to a complete crew.
             </p>
             <div className="hero-actions">
               <a className="primary-action" href="/open/?role=customer">Find workers near me <span aria-hidden="true">→</span></a>
@@ -66,10 +66,9 @@ export default function ServicesPage() {
           </div>
 
           <div className="directory-grid">
-            {serviceGroups.map((group, index) => (
+            {serviceGroups.map((group) => (
               <article className="directory-card" key={group.slug}>
                 <header>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
                   <div>
                     <h2><Link href={serviceHref(group.slug)}>{group.title}</Link></h2>
                     <p>{group.summary}</p>
@@ -93,9 +92,9 @@ export default function ServicesPage() {
             <h2 id="hiring-modes-title">Choose the hiring mode that fits the requirement</h2>
           </div>
           <div className="hiring-mode-grid">
-            <article><span>01</span><h3>Book one worker</h3><p>For home services, repairs, driving, or a defined task.</p></article>
-            <article><span>02</span><h3>Set a recurring need</h3><p>For household help, hospitality, cleaning, security, or facility operations.</p></article>
-            <article><span>03</span><h3>Build your crew</h3><p>For construction sites, projects, restaurants, facilities, and bulk requirements.</p></article>
+            <article><span>Individual</span><h3>Book one worker</h3><p>For home services, repairs, driving, or a defined task.</p></article>
+            <article><span>Recurring</span><h3>Set a recurring need</h3><p>For household help, hospitality, cleaning, security, or facility operations.</p></article>
+            <article><span>Workforce</span><h3>Build your crew</h3><p>For construction sites, projects, restaurants, facilities, and bulk requirements.</p></article>
           </div>
         </section>
 

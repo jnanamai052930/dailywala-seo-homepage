@@ -22,12 +22,12 @@ const useCases = [
 ];
 
 const differentiators = [
-  ['01', 'Hyperlocal discovery', 'Start with the work location and discover workers relevant to the requirement nearby.'],
-  ['02', 'Broad workforce marketplace', 'Construction, household, hospitality, technical, facility, logistics, and business workforce in one place.'],
-  ['03', 'Availability-led matching', 'See availability and fulfilment signals where supported, so a promising profile can become a confirmed assignment.'],
-  ['04', 'One worker or a full crew', 'Book for one job, a recurring requirement, or a bulk workforce need across sites and operations.'],
-  ['05', 'Structured worker discovery', 'Evaluate available profile details such as skills, sub-skills, experience, rating, and rate where provided.'],
-  ['06', 'Assisted matching', 'Describe the requirement in plain language and let DailyWala help narrow suitable nearby worker options.'],
+  ['Hyperlocal discovery', 'Start with the work location and discover workers relevant to the requirement nearby.'],
+  ['Broad workforce marketplace', 'Construction, household, hospitality, technical, facility, logistics, and business workforce in one place.'],
+  ['Availability-led matching', 'See availability and fulfilment signals where supported, so a promising profile can become a confirmed assignment.'],
+  ['One worker or a full crew', 'Book for one job, a recurring requirement, or a bulk workforce need across sites and operations.'],
+  ['Structured worker discovery', 'Evaluate available profile details such as skills, sub-skills, experience, rating, and rate where provided.'],
+  ['Assisted matching', 'Describe the requirement in plain language and let DailyWala help narrow suitable nearby worker options.'],
 ];
 
 export default function HomePage() {
@@ -60,7 +60,7 @@ export default function HomePage() {
             <h1>Find &amp; Hire Workers <em>Near You</em></h1>
             <p className="hero-lede">
               From construction workers and maids to cooks, drivers, electricians, technicians, cleaners, and security
-              staff—DailyWala helps homes, contractors, and businesses discover the right workers nearby.
+              staff - DailyWala helps homes, contractors, and businesses discover the right workers nearby.
             </p>
             <nav className="hero-breadth" aria-label="DailyWala workforce categories">
               {workforceBreadth.map(([label, slug]) => (
@@ -120,9 +120,9 @@ export default function HomePage() {
             </p>
           </div>
           <div className="marketplace-grid">
-            {serviceGroups.map((group, index) => (
+            {serviceGroups.map((group) => (
               <article className="marketplace-card" key={group.slug}>
-                <div className="marketplace-card-top"><span>{String(index + 1).padStart(2, '0')}</span><p>{group.items.length} services</p></div>
+                <div className="marketplace-card-top"><p>{group.items.length} services</p></div>
                 <h3><Link href={serviceHref(group.slug)}>{group.title}</Link></h3>
                 <p>{group.summary}</p>
                 <div className="service-tags">
@@ -139,7 +139,7 @@ export default function HomePage() {
           <div className="section-intro">
             <p className="eyebrow">Built around real requirements</p>
             <h2 id="real-needs-title">Urgent help today. Planned workforce tomorrow.</h2>
-            <p>DailyWala is designed around the outcome you need—not around waiting for job applications.</p>
+            <p>DailyWala is designed around the outcome you need - not around waiting for job applications.</p>
           </div>
           <div className="use-case-grid">
             {useCases.map((item) => (
@@ -175,8 +175,8 @@ export default function HomePage() {
             </p>
           </div>
           <div className="difference-grid">
-            {differentiators.map(([number, title, description]) => (
-              <article key={number}><span>{number}</span><div><h3>{title}</h3><p>{description}</p></div></article>
+            {differentiators.map(([title, description]) => (
+              <article key={title}><div><h3>{title}</h3><p>{description}</p></div></article>
             ))}
           </div>
         </section>
@@ -206,8 +206,8 @@ export default function HomePage() {
           </div>
           <p>
             Looking for labour near you, a mason near your site, a maid in your area, or technicians available nearby?
-            DailyWala helps you begin with the work location and service needed. Genuine location coverage—not thin or
-            invented locality pages—determines what can be discovered in the platform.
+            DailyWala helps you begin with the work location and service needed. Genuine location coverage - not thin or
+            invented locality pages - determines what can be discovered in the platform.
           </p>
         </section>
 

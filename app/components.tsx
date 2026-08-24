@@ -58,7 +58,7 @@ export function ContactBand() {
     <section className="contact-band" aria-labelledby="contact-band-title">
       <div>
         <p className="eyebrow">Start with your requirement</p>
-        <h2 id="contact-band-title">Need one worker—or an entire workforce?</h2>
+        <h2 id="contact-band-title">Need one worker - or an entire workforce?</h2>
         <p>Share the service, work location, date, shift, and worker count. DailyWala can help you take the right next step.</p>
       </div>
       <div className="contact-actions">
