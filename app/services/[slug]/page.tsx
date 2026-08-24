@@ -84,11 +84,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               <strong>Private by design</strong>
               <span>Worker residential addresses, phone numbers, and precise private locations are not presented as public discovery data.</span>
             </div>
-            <div className="service-keywords" aria-label="Related search terms">
-              {page.keywords.map((keyword) => (
-                <span key={keyword}>{keyword}</span>
-              ))}
-            </div>
           </article>
 
           <aside className="service-detail-card" aria-labelledby="related-services-title">

@@ -3,6 +3,15 @@ import { ContactBand, JsonLd, SiteFooter, SiteHeader } from './components';
 import { siteConfig } from './siteConfig';
 import { featuredServices, serviceGroups, serviceHref } from './services/serviceCatalog';
 
+const workforceBreadth = [
+  ['Construction', 'construction-and-skilled-trades'],
+  ['Home Help', 'household-and-care-services'],
+  ['Cooks & Hospitality', 'hospitality-and-food-workforce'],
+  ['Drivers', 'drivers-and-machine-operators'],
+  ['Technical & Repair', 'repair-and-technical-services'],
+  ['Cleaning & Security', 'facility-and-business-workforce'],
+] as const;
+
 const useCases = [
   { label: 'Home', need: 'Need a maid near me', detail: 'One-time or recurring household help' },
   { label: 'Repair', need: 'Need an AC technician today', detail: 'Nearby technical and maintenance support' },
@@ -52,6 +61,15 @@ export default function HomePage() {
             <p className="hero-lede">
               From construction workers and maids to cooks, drivers, electricians, technicians, cleaners, and security
               staff—DailyWala helps homes, contractors, and businesses discover the right workers nearby.
+            </p>
+            <nav className="hero-breadth" aria-label="DailyWala workforce categories">
+              {workforceBreadth.map(([label, slug]) => (
+                <Link href={serviceHref(slug)} key={slug}>{label}</Link>
+              ))}
+            </nav>
+            <p className="hero-scale">
+              <strong>Hire one worker or an entire workforce.</strong>
+              <span>For homes, construction sites, hotels, restaurants, facilities, and businesses.</span>
             </p>
             <div className="hero-actions">
               <a className="primary-action" href="/open/?role=customer">Find Workers Near Me <span aria-hidden="true">→</span></a>
@@ -137,11 +155,11 @@ export default function HomePage() {
         <section className="section flow-section" aria-labelledby="flow-title">
           <div className="flow-heading">
             <p className="eyebrow">A structured fulfilment flow</p>
-            <h2 id="flow-title">From requirement to confirmed worker</h2>
-            <p>Search, compare, select, and track in one clear journey.</p>
+            <h2 id="flow-title">From work location to confirmed booking</h2>
+            <p>Find workers by the skill needed at the location where the work will happen.</p>
           </div>
           <ol className="fulfilment-flow">
-            {['Requirement', 'Work location', 'Nearby workers', 'Skill & availability', 'Selection', 'Booking', 'Confirmation'].map((step, index) => (
+            {['Work location', 'Required skill', 'Nearby workers', 'Availability', 'Selection / booking'].map((step, index) => (
               <li key={step}><span>{index + 1}</span><strong>{step}</strong></li>
             ))}
           </ol>

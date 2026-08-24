@@ -29,6 +29,7 @@ export const serviceGroups: ServiceGroup[] = [
     items: [
       skill('Masons', 'masons', 'Find nearby masons for brick laying, plastering, tile work, concrete support, and construction jobs.', ['mason near me']),
       skill('Construction labour', 'construction-labour', 'Hire nearby labour for material movement, mixing, site cleaning, demolition, and general construction support.', ['labour near me', 'daily wage workers near me']),
+      skill('Helpers', 'helpers', 'Find helpers for material movement, site cleaning, loading, unloading, and general work support.', ['helper near me', 'construction helper near me']),
       skill('Carpenters', 'carpenters', 'Find carpenters for shuttering, furniture work, doors, windows, fit-outs, and site carpentry.', ['carpenter near me']),
       skill('Painters', 'painters', 'Hire painters for interior, exterior, touch-up, polishing, and site finishing work.', ['painter near me']),
       skill('Welders & steel fixers', 'welders-and-steel-fixers', 'Find welders, fabricators, bar benders, and steel fixers for structural and repair work.', ['welder near me', 'bar bender near me']),

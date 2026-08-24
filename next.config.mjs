@@ -8,10 +8,15 @@ const nextConfig = {
   trailingSlash: true,
   async redirects() {
     return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'dailywala.in' }],
+        destination: 'https://www.dailywala.in/:path*',
+        permanent: true,
+      },
       { source: '/services/construction-and-site-work/', destination: '/services/construction-and-skilled-trades/', permanent: true },
       { source: '/services/repairs-and-maintenance/', destination: '/services/repair-and-technical-services/', permanent: true },
       { source: '/services/operations-and-support/', destination: '/services/facility-and-business-workforce/', permanent: true },
-      { source: '/services/helpers/', destination: '/services/construction-labour/', permanent: true },
       { source: '/services/welders/', destination: '/services/welders-and-steel-fixers/', permanent: true },
       { source: '/services/bar-benders/', destination: '/services/welders-and-steel-fixers/', permanent: true },
       { source: '/services/foremen/', destination: '/services/foremen-and-site-supervisors/', permanent: true },
