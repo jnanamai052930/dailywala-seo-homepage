@@ -157,11 +157,11 @@ export default function HomePage() {
             <h2 id="flow-title">From work location to confirmed booking</h2>
             <p>Find workers by the skill needed at the location where the work will happen.</p>
           </div>
-          <ol className="fulfilment-flow">
-            {['Work location', 'Required skill', 'Nearby workers', 'Availability', 'Selection / booking'].map((step, index) => (
-              <li key={step}><span>{index + 1}</span><strong>{step}</strong></li>
+          <ul className="fulfilment-flow">
+            {['Work location', 'Required skill', 'Nearby workers', 'Availability', 'Selection / booking'].map((step) => (
+              <li key={step}><strong>{step}</strong></li>
             ))}
-          </ol>
+          </ul>
         </section>
 
         <section className="section difference-section" aria-labelledby="difference-title">

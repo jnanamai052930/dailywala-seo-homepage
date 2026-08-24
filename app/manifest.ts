@@ -10,7 +10,7 @@ export default function manifest(): MetadataRoute.Manifest {
     start_url: '/',
     display: 'standalone',
     background_color: '#f8fafc',
-    theme_color: '#12211b',
+    theme_color: '#1b2d63',
     icons: [
       {
         src: '/images/dailywala-app-icon.png',
