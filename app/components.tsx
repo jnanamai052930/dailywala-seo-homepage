@@ -14,7 +14,10 @@ export function SiteHeader() {
     <header className="site-header">
       <Link className="brand" href="/" aria-label="DailyWala home">
         <img src="/images/dailywala-app-icon.png" alt="" width="40" height="40" />
-        <DailyWalaWordmark />
+        <span className="brand-lockup">
+          <DailyWalaWordmark />
+          <small>Hyperlocal workers, on demand.</small>
+        </span>
       </Link>
       <nav className="nav" aria-label="Primary navigation">
         <Link href="/services/">Services</Link>
@@ -29,10 +32,6 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="site-footer">
-      <div className="footer-brand">
-        <DailyWalaWordmark className="inline-wordmark" />
-        <p>Hyperlocal workers, on demand.</p>
-      </div>
       <div className="footer-links" aria-label="Footer navigation">
         <Link href="/services/">Services</Link>
         <Link href="/why-us/">Why DailyWala</Link>

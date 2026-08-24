@@ -1276,6 +1276,20 @@ body {
   height: 36px;
 }
 
+.brand-lockup {
+  display: grid;
+  gap: 0;
+  line-height: 1;
+}
+
+.brand-lockup small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.58rem;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
 .nav {
   gap: clamp(18px, 2.5vw, 34px);
   color: #526159;
@@ -1738,13 +1752,11 @@ h3 {
 
 .site-footer {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr auto;
   padding: 34px clamp(22px, 6vw, 88px);
   background: #e9ede8;
   color: #536159;
 }
-.footer-brand .wordmark { color: var(--forest); font-size: 1.3rem; font-weight: 900; }
-.footer-brand p { margin-top: 4px; font-size: .75rem; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 18px; font-size: .76rem; font-weight: 800; }
 .footer-links a:hover { color: var(--forest); }
 .footer-legal { font-size: .7rem; }
@@ -1757,7 +1769,6 @@ h3 {
   .directory-services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .fulfilment-flow { grid-template-columns: repeat(4, 1fr); }
   .site-footer { grid-template-columns: 1fr auto; }
-  .footer-legal { grid-column: 1 / -1; }
 }
 
 @media (max-width: 760px) {
@@ -1797,6 +1808,7 @@ h3 {
 @media (max-width: 520px) {
   .brand { font-size: 21px; }
   .brand img { width: 32px; height: 32px; }
+  .brand-lockup small { font-size: 0.52rem; }
   .header-cta { min-height: 38px; padding: 9px 12px; font-size: .78rem; }
   .section { padding: 66px 18px; }
   .new-hero { padding-inline: 18px; }
