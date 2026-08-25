@@ -9,8 +9,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'Find and hire nearby workers by skill, location, availability, and requirement.',
     start_url: '/',
     display: 'standalone',
-    background_color: '#f8fafc',
-    theme_color: '#1b2d63',
+    background_color: '#fffdf7',
+    theme_color: '#2d1b12',
     icons: [
       {
         src: '/images/dailywala-app-icon.png',
