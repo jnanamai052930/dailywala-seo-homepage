@@ -1264,7 +1264,14 @@ body {
   min-height: 72px;
   padding: 12px clamp(20px, 5vw, 76px);
   border-color: rgba(255, 255, 255, 0.12);
-  background: linear-gradient(90deg, #fff7df 0%, #fde68a 28%, #27408b 64%, #172554 100%);
+  background: linear-gradient(
+    105deg,
+    #fff8dc 0%,
+    #ffe89a 25%,
+    #7890be 50%,
+    #294681 68%,
+    #142653 100%
+  );
 }
 
 .brand {
