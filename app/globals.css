@@ -124,8 +124,11 @@ img {
 }
 
 .brand img {
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 10px;
-  box-shadow: var(--shadow-sm);
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(17, 24, 39, 0.2);
 }
 
 .wordmark,
@@ -136,7 +139,7 @@ img {
 }
 
 .wordmark-accent {
-  color: inherit;
+  color: var(--orange);
 }
 
 .inline-wordmark {
