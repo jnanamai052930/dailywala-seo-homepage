@@ -1659,10 +1659,10 @@ h3 {
 .flow-heading .eyebrow { grid-column: 1 / -1; margin: 0; color: #fde68a; }
 .flow-heading h2 { color: white; margin: 0; }
 .flow-heading > p:last-child { margin: 0; color: #ffedd5; }
-.fulfilment-flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; margin: 0; padding: 0; overflow: hidden; border: 1px solid rgba(255,255,255,.18); border-radius: 16px; list-style: none; }
-.fulfilment-flow li { position: relative; display: flex; min-height: 135px; padding: 19px 16px; align-items: center; background: rgba(255,255,255,.055); }
+.fulfilment-flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px; margin: 0; padding: 0; overflow: hidden; border: 1px solid rgba(255,255,255,.18); border-radius: 16px; list-style: none; }
+.fulfilment-flow li { position: relative; display: flex; min-height: 135px; padding: 19px 16px; align-items: center; justify-content: center; text-align: center; background: rgba(255,255,255,.055); }
 .fulfilment-flow li::before { content: ""; width: 9px; height: 9px; margin-right: 12px; flex: 0 0 auto; border-radius: 3px; background: var(--brand-hi); }
-.fulfilment-flow li:not(:last-child)::after { content: "→"; position: absolute; right: -8px; top: 50%; z-index: 1; color: var(--brand-hi); }
+.fulfilment-flow li:not(:last-child)::after { content: "→"; position: absolute; right: -12px; top: 50%; z-index: 1; display: grid; width: 24px; height: 24px; place-items: center; color: var(--brand-hi); font-size: 1rem; line-height: 1; transform: translateY(-50%); }
 .fulfilment-flow strong { display: block; }
 .fulfilment-flow strong { color: #f8fafc; font-size: 0.76rem; line-height: 1.35; }
 
@@ -1770,7 +1770,7 @@ h3 {
   .finder-card { width: min(650px, 100%); }
   .marketplace-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .directory-services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .fulfilment-flow { grid-template-columns: repeat(4, 1fr); }
+  .fulfilment-flow { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .site-footer { grid-template-columns: 1fr auto; }
 }
 
@@ -1799,8 +1799,9 @@ h3 {
   .privacy-section,
   .service-detail-layout { grid-template-columns: 1fr; }
   .difference-heading { position: static; }
-  .fulfilment-flow { grid-template-columns: repeat(2, 1fr); }
-  .fulfilment-flow li { min-height: 112px; }
+  .fulfilment-flow { grid-template-columns: 1fr; }
+  .fulfilment-flow li { min-height: 76px; }
+  .fulfilment-flow li:not(:last-child)::after { top: auto; right: 50%; bottom: -12px; transform: translateX(50%) rotate(90deg); }
   .bulk-art img { min-height: 350px; }
   .directory-card { padding: 22px; }
   .directory-services { grid-template-columns: 1fr; }
@@ -1825,8 +1826,7 @@ h3 {
   .marketplace-grid { grid-template-columns: 1fr; }
   .marketplace-card { min-height: 350px; }
   .use-case-grid { grid-template-columns: 1fr; }
-  .fulfilment-flow { grid-template-columns: 1fr; }
-  .fulfilment-flow li:not(:last-child)::after { top: auto; right: 18px; bottom: -8px; transform: rotate(90deg); }
+  .fulfilment-flow li { min-height: 72px; }
   .bulk-copy li { grid-template-columns: 1fr; gap: 4px; }
   .directory-card > header { grid-template-columns: 1fr; }
   .directory-services a { align-items: flex-start; flex-direction: column; gap: 4px; }
