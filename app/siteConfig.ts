@@ -5,6 +5,7 @@ export const siteConfig = {
   domain: 'https://www.dailywala.in',
   phoneDisplay: '+91 74166 79509',
   phoneHref: 'tel:+917416679509',
+  whatsappHref: 'https://wa.me/917416679509?text=Hi',
   email: 'contact@dailywala.in',
   supportEmail: 'support@dailywala.in',
   socialLinks: {

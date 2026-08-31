@@ -51,7 +51,18 @@ export default function ContactPage() {
         <section className="section contact-layout">
           <div className="contact-details">
             <h2><DailyWalaWordmark className="inline-wordmark" /> support</h2>
-            <a href={siteConfig.phoneHref}>{siteConfig.phoneDisplay}</a>
+            <a
+              className="whatsapp-link"
+              href={siteConfig.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Message DailyWala support on WhatsApp at ${siteConfig.phoneDisplay}`}
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2a9.8 9.8 0 0 0-8.4 14.8L2.1 22l5.3-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1 1 7 3.8Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.5.2-.4c.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.3-.5-.4Z" />
+              </svg>
+              <span>{siteConfig.phoneDisplay}</span>
+            </a>
             <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
             <a href={`mailto:${siteConfig.supportEmail}`}>{siteConfig.supportEmail}</a>
             <p>{siteConfig.addressLocality}, India</p>
