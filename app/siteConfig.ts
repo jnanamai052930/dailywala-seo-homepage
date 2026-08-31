@@ -7,6 +7,11 @@ export const siteConfig = {
   phoneHref: 'tel:+917416679509',
   email: 'contact@dailywala.in',
   supportEmail: 'support@dailywala.in',
+  socialLinks: {
+    facebook: 'https://www.facebook.com/dailywala/',
+    x: 'https://x.com/dailywala_in',
+    instagram: 'https://www.instagram.com/dailywalaofficial/',
+  },
   description:
     'DailyWala is a hyperlocal workforce marketplace helping homes and businesses find nearby workers for individual service needs or complete workforce requirements.',
   addressLocality: 'Tirupati',

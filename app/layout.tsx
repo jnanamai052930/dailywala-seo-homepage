@@ -39,6 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@dailywala_in',
+    creator: '@dailywala_in',
     title: 'DailyWala - Hyperlocal Workforce Marketplace',
     description: siteConfig.description,
     images: ['/og.png'],

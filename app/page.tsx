@@ -39,6 +39,7 @@ export default function HomePage() {
     email: siteConfig.email,
     telephone: siteConfig.phoneDisplay,
     description: siteConfig.description,
+    sameAs: Object.values(siteConfig.socialLinks),
     knowsAbout: serviceGroups.map((group) => group.title),
   };
 
