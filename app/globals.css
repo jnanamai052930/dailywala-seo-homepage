@@ -799,17 +799,25 @@ button:hover {
   font-weight: 800;
 }
 
-.contact-details .whatsapp-link {
-  display: inline-flex;
+.contact-details .contact-icon-link {
+  display: flex;
+  width: fit-content;
   align-items: center;
   gap: 10px;
 }
 
-.whatsapp-link svg {
+.contact-icon-link svg {
   width: 24px;
   height: 24px;
   flex: 0 0 auto;
+}
+
+.whatsapp-link svg {
   fill: #25d366;
+}
+
+.email-link svg {
+  fill: var(--brand);
 }
 
 .contact-form-panel {

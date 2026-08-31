@@ -19,20 +19,13 @@ export default function ContactPage() {
       '@type': 'Organization',
       name: siteConfig.name,
       telephone: siteConfig.phoneDisplay,
-      email: siteConfig.email,
-      contactPoint: [
-        {
-          '@type': 'ContactPoint',
-          contactType: 'general enquiries',
-          email: siteConfig.email,
-          telephone: siteConfig.phoneDisplay,
-        },
-        {
-          '@type': 'ContactPoint',
-          contactType: 'customer support',
-          email: siteConfig.supportEmail,
-        },
-      ],
+      email: siteConfig.supportEmail,
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        email: siteConfig.supportEmail,
+        telephone: siteConfig.phoneDisplay,
+      },
     },
   };
 
@@ -52,7 +45,7 @@ export default function ContactPage() {
           <div className="contact-details">
             <h2><DailyWalaWordmark className="inline-wordmark" /> support</h2>
             <a
-              className="whatsapp-link"
+              className="contact-icon-link whatsapp-link"
               href={siteConfig.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
@@ -63,9 +56,16 @@ export default function ContactPage() {
               </svg>
               <span>{siteConfig.phoneDisplay}</span>
             </a>
-            <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-            <a href={`mailto:${siteConfig.supportEmail}`}>{siteConfig.supportEmail}</a>
-            <p>{siteConfig.addressLocality}, India</p>
+            <a
+              className="contact-icon-link email-link"
+              href={`mailto:${siteConfig.supportEmail}`}
+              aria-label={`Email DailyWala support at ${siteConfig.supportEmail}`}
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 3.2-8 5-8-5V6l8 5 8-5v1.2Z" />
+              </svg>
+              <span>{siteConfig.supportEmail}</span>
+            </a>
           </div>
           <ContactForm />
         </section>
