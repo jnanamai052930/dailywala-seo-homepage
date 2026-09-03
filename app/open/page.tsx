@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { DeepLinkRedirect } from './DeepLinkRedirect';
 
 export const metadata: Metadata = {
-  title: 'Open DailyWala App',
-  description: 'Open the DailyWala customer or worker app.',
+  title: 'Open Dailywala App',
+  description: 'Open the Dailywala customer or worker app.',
   robots: { index: false, follow: true },
 };
 

@@ -97,7 +97,7 @@ export async function POST(request: Request) {
   const companyWebsite = field(body.companyWebsite, 200);
   const startedAt = typeof body.startedAt === 'number' ? body.startedAt : 0;
   if (companyWebsite || !startedAt || Date.now() - startedAt < MIN_SUBMIT_TIME_MS) {
-    return json('Thank you. Your enquiry has been sent to DailyWala.', 200);
+    return json('Thank you. Your enquiry has been sent to Dailywala.', 200);
   }
 
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
@@ -123,7 +123,7 @@ export async function POST(request: Request) {
 
   const submittedAt = new Date().toISOString();
   const text = [
-    'New DailyWala website enquiry',
+    'New Dailywala website enquiry',
     '',
     `Name: ${name}`,
     `Phone: ${phone}`,
@@ -153,7 +153,7 @@ export async function POST(request: Request) {
 
   const html = [
     '<div style="font-family:Arial,sans-serif;color:#111827">',
-    '<h1 style="font-size:22px">New DailyWala website enquiry</h1>',
+    '<h1 style="font-size:22px">New Dailywala website enquiry</h1>',
     `<table style="border-collapse:collapse">${rows}</table>`,
     '<h2 style="font-size:18px;margin-top:24px">Message</h2>',
     `<p style="white-space:pre-wrap">${escapeHtml(message)}</p>`,
@@ -166,7 +166,7 @@ export async function POST(request: Request) {
 
   if (!gmailUser || !gmailAppPassword) {
     console.error('Gmail SMTP credentials are not configured.');
-    return json('Email service is temporarily unavailable. Please call or email DailyWala directly.', 503);
+    return json('Email service is temporarily unavailable. Please call or email Dailywala directly.', 503);
   }
 
   try {
@@ -185,14 +185,14 @@ export async function POST(request: Request) {
 
     await transporter.sendMail({
       to: recipient,
-      from: `"DailyWala Website" <${gmailUser}>`,
+      from: `"Dailywala Website" <${gmailUser}>`,
       subject: `Website enquiry: ${service}`,
       text,
       html,
       ...(email ? { replyTo: email } : {}),
     });
 
-    return json('Thank you. Your enquiry has been sent to DailyWala.', 200);
+    return json('Thank you. Your enquiry has been sent to Dailywala.', 200);
   } catch (error) {
     console.error('Unable to send contact enquiry email.', error);
     const smtpError = error as { code?: unknown; responseCode?: unknown };
@@ -201,7 +201,7 @@ export async function POST(request: Request) {
 
     return Response.json(
       {
-        message: 'We could not send your enquiry. Please call or email DailyWala directly.',
+        message: 'We could not send your enquiry. Please call or email Dailywala directly.',
         errorCode,
         ...(smtpStatus ? { smtpStatus } : {}),
       },

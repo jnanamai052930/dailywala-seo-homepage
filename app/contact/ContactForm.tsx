@@ -35,7 +35,7 @@ export function ContactForm() {
       startedAt.current = Date.now();
       setStatus({
         kind: 'success',
-        message: result.message || 'Thank you. Your enquiry has been sent to DailyWala.',
+        message: result.message || 'Thank you. Your enquiry has been sent to Dailywala.',
       });
     } catch (error) {
       setStatus({
@@ -54,7 +54,7 @@ export function ContactForm() {
       <div>
         <p className="eyebrow">Send an enquiry</p>
         <h2>Tell us what you need</h2>
-        <p className="contact-form-intro">Share your requirements and the DailyWala team will contact you.</p>
+        <p className="contact-form-intro">Share your requirements and the Dailywala team will contact you.</p>
       </div>
 
       <form className="contact-form" onSubmit={handleSubmit}>

@@ -4,8 +4,8 @@ export const dynamic = 'force-static';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'DailyWala',
-    short_name: 'DailyWala',
+    name: 'Dailywala',
+    short_name: 'Dailywala',
     description: 'Find and hire nearby workers by skill, location, availability, and requirement.',
     start_url: '/',
     display: 'standalone',

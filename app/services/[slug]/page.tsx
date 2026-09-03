@@ -20,11 +20,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const title = page.kind === 'group' ? `${page.title} Near You` : `Find ${page.title} Near You`;
   return {
     title,
-    description: `${page.summary} Share the work location, date, and worker count with DailyWala.`,
-    keywords: ['DailyWala', 'workers near me', page.title, ...page.keywords],
+    description: `${page.summary} Share the work location, date, and worker count with Dailywala.`,
+    keywords: ['Dailywala', 'workers near me', page.title, ...page.keywords],
     alternates: { canonical: serviceHref(page.slug) },
     openGraph: {
-      title: `${title} | DailyWala`,
+      title: `${title} | Dailywala`,
       description: `${page.summary} Individual and bulk requirements supported.`,
       url: serviceHref(page.slug),
     },
@@ -39,7 +39,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   const serviceJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: `${page.title} - DailyWala`,
+    name: `${page.title} - Dailywala`,
     description: page.summary,
     provider: {
       '@type': 'Organization',
@@ -76,7 +76,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               Hire {page.title.toLowerCase()} for one job, recurring work, or a crew
             </h2>
             <p>
-              Share the work location, preferred date or shift, worker count, and task details. DailyWala helps narrow
+              Share the work location, preferred date or shift, worker count, and task details. Dailywala helps narrow
               suitable nearby workers using available skill, sub-skill, experience, rating, rate, and availability
               information where supported by worker profiles and application data.
             </p>

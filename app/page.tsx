@@ -27,7 +27,7 @@ const differentiators = [
   ['Availability-led matching', 'See availability and fulfilment signals where supported, so a promising profile can become a confirmed assignment.'],
   ['One worker or a full crew', 'Book for one job, a recurring requirement, or a bulk workforce need across sites and operations.'],
   ['Structured worker discovery', 'Evaluate available profile details such as skills, sub-skills, experience, rating, and rate where provided.'],
-  ['Assisted matching', 'Describe the requirement in plain language and let DailyWala help narrow suitable nearby worker options.'],
+  ['Assisted matching', 'Describe the requirement in plain language and let Dailywala help narrow suitable nearby worker options.'],
 ];
 
 export default function HomePage() {
@@ -61,9 +61,9 @@ export default function HomePage() {
             <h1>Find &amp; Hire Workers <em>Near You</em></h1>
             <p className="hero-lede">
               From construction workers and maids to cooks, drivers, electricians, technicians, cleaners, and security
-              staff - DailyWala helps homes, contractors, and businesses discover the right workers nearby.
+              staff - Dailywala helps homes, contractors, and businesses discover the right workers nearby.
             </p>
-            <nav className="hero-breadth" aria-label="DailyWala workforce categories">
+            <nav className="hero-breadth" aria-label="Dailywala workforce categories">
               {workforceBreadth.map(([label, slug]) => (
                 <Link href={serviceHref(slug)} key={slug}>{label}</Link>
               ))}
@@ -77,7 +77,7 @@ export default function HomePage() {
               <Link className="secondary-action" href="/contact/">Post Your Requirement</Link>
               <a className="text-action" href="/open/?role=worker">Find Work Near You</a>
             </div>
-            <div className="hero-proof" aria-label="DailyWala capabilities">
+            <div className="hero-proof" aria-label="Dailywala capabilities">
               <span>Nearby workers</span><span>Multiple skills</span><span>Individual &amp; bulk hiring</span><span>Assisted matching</span>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function HomePage() {
           </aside>
         </section>
 
-        <section className="confidence-strip" aria-label="Structured DailyWala hiring">
+        <section className="confidence-strip" aria-label="Structured Dailywala hiring">
           <div><strong>Skill-led</strong><span>Choose a service and sub-skill</span></div>
           <div><strong>Location-led</strong><span>Search around the work location</span></div>
           <div><strong>Requirement-led</strong><span>One worker, recurring help, or a crew</span></div>
@@ -116,7 +116,7 @@ export default function HomePage() {
             <p className="eyebrow">A workforce marketplace, not a job board</p>
             <h2 id="service-marketplace-title">Book workers by service. Build a workforce by requirement.</h2>
             <p>
-              DailyWala brings home services and business workforce supply into one structured discovery flow. Start
+              Dailywala brings home services and business workforce supply into one structured discovery flow. Start
               with what needs to get done, where the work is, and how many people you need.
             </p>
           </div>
@@ -132,14 +132,14 @@ export default function HomePage() {
               </article>
             ))}
           </div>
-          <div className="center-action"><Link className="secondary-action" href="/services/">See all DailyWala services</Link></div>
+          <div className="center-action"><Link className="secondary-action" href="/services/">See all Dailywala services</Link></div>
         </section>
 
         <section className="section real-needs-section" aria-labelledby="real-needs-title">
           <div className="section-intro">
             <p className="eyebrow">Built around real requirements</p>
             <h2 id="real-needs-title">Urgent help today. Planned workforce tomorrow.</h2>
-            <p>DailyWala is designed around the outcome you need - not around waiting for job applications.</p>
+            <p>Dailywala is designed around the outcome you need - not around waiting for job applications.</p>
           </div>
           <div className="use-case-grid">
             {useCases.map((item) => (
@@ -167,7 +167,7 @@ export default function HomePage() {
 
         <section className="section difference-section" aria-labelledby="difference-title">
           <div className="difference-heading">
-            <p className="eyebrow">The DailyWala difference</p>
+            <p className="eyebrow">The Dailywala difference</p>
             <h2 id="difference-title">Right worker. Nearby. When you need them.</h2>
             <p>
               A hyperlocal workforce marketplace for households, contractors, restaurants, facilities, and businesses.
@@ -182,7 +182,7 @@ export default function HomePage() {
         </section>
 
         <section className="section bulk-section" aria-labelledby="bulk-title">
-          <div className="bulk-art"><img src="/images/services-line-sketch.png" alt="DailyWala workers across electrical, plumbing, carpentry, repair, driving, security, cleaning, and facility services" /></div>
+          <div className="bulk-art"><img src="/images/services-line-sketch.png" alt="Dailywala workers across electrical, plumbing, carpentry, repair, driving, security, cleaning, and facility services" /></div>
           <div className="bulk-copy">
             <p className="eyebrow">One worker to an entire workforce</p>
             <h2 id="bulk-title">Hiring that scales with the requirement</h2>
@@ -206,7 +206,7 @@ export default function HomePage() {
           </div>
           <p>
             Looking for labour near you, a mason near your site, a maid in your area, or technicians available nearby?
-            DailyWala helps you begin with the work location and service needed. Genuine location coverage - not thin or
+            Dailywala helps you begin with the work location and service needed. Genuine location coverage - not thin or
             invented locality pages - determines what can be discovered in the platform.
           </p>
         </section>

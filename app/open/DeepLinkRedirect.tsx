@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo } from 'react';
-import { DailyWalaWordmark } from '../components';
+import { DailywalaWordmark } from '../components';
 import { appLinks, type AppRole } from '../siteConfig';
 
 function roleFromSearch(): AppRole {
@@ -32,7 +32,7 @@ export function DeepLinkRedirect() {
   return (
     <div className="open-panel">
       <img src="/images/dailywala-app-icon.png" alt="" width="72" height="72" />
-      <h1>Opening <DailyWalaWordmark className="inline-wordmark" /></h1>
+      <h1>Opening <DailywalaWordmark className="inline-wordmark" /></h1>
       <p>If the app does not open automatically, use the button below.</p>
       <div className="app-actions centered">
         <a className="primary-action" href={links.deepLink}>Open app</a>

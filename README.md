@@ -1,4 +1,4 @@
-# DailyWala Marketing Site
+# Dailywala Marketing Site
 
 Next.js marketing site for `www.dailywala.in`.
 

@@ -3,16 +3,16 @@ import { ContactBand, JsonLd, SiteFooter, SiteHeader } from '../components';
 import { siteConfig } from '../siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Why Choose DailyWala',
+  title: 'Why Choose Dailywala',
   description:
-    'Why choose DailyWala for hyperlocal worker discovery, individual and bulk hiring, structured worker information, and workforce fulfilment.',
+    'Why choose Dailywala for hyperlocal worker discovery, individual and bulk hiring, structured worker information, and workforce fulfilment.',
   alternates: { canonical: '/why-us/' },
   openGraph: {
-    title: 'Why Choose DailyWala',
+    title: 'Why Choose Dailywala',
     description:
-      'DailyWala helps homes, contractors, and businesses find suitable nearby workers for individual and bulk requirements.',
+      'Dailywala helps homes, contractors, and businesses find suitable nearby workers for individual and bulk requirements.',
     url: '/why-us/',
-    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'DailyWala hyperlocal worker discovery and hiring platform' }],
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Dailywala hyperlocal worker discovery and hiring platform' }],
   },
 };
 
@@ -20,7 +20,7 @@ export default function WhyUsPage() {
   const whyUsPage = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'Why Choose DailyWala',
+    name: 'Why Choose Dailywala',
     url: `${siteConfig.domain}/why-us/`,
     description: metadata.description,
     about: {
@@ -36,16 +36,16 @@ export default function WhyUsPage() {
       <main>
         <section className="services-new-hero why-new-hero">
           <div className="hero-copy">
-            <p className="hero-kicker"><span aria-hidden="true" /> Why DailyWala</p>
+            <p className="hero-kicker"><span aria-hidden="true" /> Why Dailywala</p>
             <h1>A faster path to the right worker nearby</h1>
             <p className="hero-lede">
-              DailyWala organizes discovery around the requirement, work location, worker skill, and availability - not
+              Dailywala organizes discovery around the requirement, work location, worker skill, and availability - not
               around posting a job and waiting for applications.
             </p>
           </div>
         </section>
 
-        <section className="section service-groups why-card-grid" aria-label="Why choose DailyWala">
+        <section className="section service-groups why-card-grid" aria-label="Why choose Dailywala">
           <article className="service-card why-card why-card-verified">
             <h2>Hyperlocal by design</h2>
             <p>Begin with the work location so discovery can focus on relevant workers nearby without publicly exposing precise private location details.</p>
@@ -68,7 +68,7 @@ export default function WhyUsPage() {
           <ol className="process-list">
             <li><strong>Describe the requirement.</strong><span>Select service, sub-skill, work location, date, shift, and worker count.</span></li>
             <li><strong>Review suitable workers.</strong><span>Use the available profile and fulfilment information to narrow the right options.</span></li>
-            <li><strong>Book and track.</strong><span>Follow assignment and confirmation in a structured DailyWala flow.</span></li>
+            <li><strong>Book and track.</strong><span>Follow assignment and confirmation in a structured Dailywala flow.</span></li>
           </ol>
         </section>
 

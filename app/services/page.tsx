@@ -7,14 +7,14 @@ import { serviceGroups, serviceHref, serviceSkills } from './serviceCatalog';
 export const metadata: Metadata = {
   title: 'Workers & Services Near You',
   description:
-    'Find nearby construction workers, maids, cooks, electricians, plumbers, technicians, cleaners, drivers, security staff, hospitality workers, and business workforce with DailyWala.',
+    'Find nearby construction workers, maids, cooks, electricians, plumbers, technicians, cleaners, drivers, security staff, hospitality workers, and business workforce with Dailywala.',
   keywords: [
     'workers near me', 'labour near me', 'hire workers near me', 'manpower near me',
     'construction workers near me', 'maid near me', 'technician near me',
   ],
   alternates: { canonical: '/services/' },
   openGraph: {
-    title: 'Find Workers & Services Near You | DailyWala',
+    title: 'Find Workers & Services Near You | Dailywala',
     description: 'Book one nearby worker, recurring help, or a complete workforce by service and work location.',
     url: '/services/',
   },
@@ -24,7 +24,7 @@ export default function ServicesPage() {
   const itemList = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'DailyWala nearby worker services',
+    name: 'Dailywala nearby worker services',
     itemListElement: serviceSkills.map((service, index) => ({
       '@type': 'ListItem',
       position: index + 1,
@@ -58,9 +58,9 @@ export default function ServicesPage() {
         <section className="section service-directory" aria-labelledby="service-directory-title">
           <div className="section-intro wide-intro">
             <p className="eyebrow">Structured by the work to be done</p>
-            <h2 id="service-directory-title">Explore the DailyWala workforce marketplace</h2>
+            <h2 id="service-directory-title">Explore the Dailywala workforce marketplace</h2>
             <p>
-              These services reflect the DailyWala customer experience and worker skill structure. Availability and
+              These services reflect the Dailywala customer experience and worker skill structure. Availability and
               fulfilment depend on the selected location, date, requirement, and active worker supply.
             </p>
           </div>
@@ -101,7 +101,7 @@ export default function ServicesPage() {
         <section className="section privacy-section">
           <div><p className="eyebrow">Location with privacy</p><h2>Nearby does not mean exposed</h2></div>
           <p>
-            DailyWala uses the work location to make discovery relevant. Precise worker residential addresses, phone
+            Dailywala uses the work location to make discovery relevant. Precise worker residential addresses, phone
             numbers, and private location details should not be displayed publicly. Enter a locality or use your area
             in the app to check genuine coverage and services.
           </p>

@@ -1,7 +1,7 @@
 import { serviceSkills } from './services/serviceCatalog';
 
 export const siteConfig = {
-  name: 'DailyWala',
+  name: 'Dailywala',
   domain: 'https://www.dailywala.in',
   phoneDisplay: '+91 74166 79509',
   phoneHref: 'tel:+917416679509',
@@ -14,7 +14,7 @@ export const siteConfig = {
     instagram: 'https://www.instagram.com/dailywalaofficial/',
   },
   description:
-    'DailyWala is a hyperlocal workforce marketplace helping homes and businesses find nearby workers for individual service needs or complete workforce requirements.',
+    'Dailywala is a hyperlocal workforce marketplace helping homes and businesses find nearby workers for individual service needs or complete workforce requirements.',
   addressLocality: 'Tirupati',
   addressCountry: 'IN',
 };
@@ -24,7 +24,7 @@ const workerFallback = encodeURIComponent('https://dailywala.netlify.app/');
 
 export const appLinks = {
   customer: {
-    label: 'Open DailyWala',
+    label: 'Open Dailywala',
     webFallback: 'https://dailywala-customer.netlify.app/',
     deepLink: 'dailywala://customer',
     androidIntent: `intent://customer#Intent;scheme=dailywala;package=com.dailywalla.app;S.browser_fallback_url=${androidFallback};end`,
@@ -32,7 +32,7 @@ export const appLinks = {
     iosStore: '',
   },
   worker: {
-    label: 'Open DailyWala',
+    label: 'Open Dailywala',
     webFallback: 'https://dailywala.netlify.app/',
     deepLink: 'dailywala://worker',
     androidIntent: `intent://worker#Intent;scheme=dailywala;package=com.dailywalla.app;S.browser_fallback_url=${workerFallback};end`,

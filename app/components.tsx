@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { siteConfig } from './siteConfig';
 
-export function DailyWalaWordmark({ className = '' }: { className?: string }) {
+export function DailywalaWordmark({ className = '' }: { className?: string }) {
   return (
-    <span className={`wordmark ${className}`} aria-label="DailyWala">
-      <span>Daily</span><span className="wordmark-accent">Wala</span>
+    <span className={`wordmark ${className}`} aria-label="Dailywala">
+      <span>Daily</span><span className="wordmark-accent">wala</span>
     </span>
   );
 }
@@ -12,10 +12,10 @@ export function DailyWalaWordmark({ className = '' }: { className?: string }) {
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <Link className="brand" href="/" aria-label="DailyWala home">
+      <Link className="brand" href="/" aria-label="Dailywala home">
         <img src="/images/dailywala-app-icon.png" alt="" width="40" height="40" />
         <span className="brand-lockup">
-          <DailyWalaWordmark />
+          <DailywalaWordmark />
           <small>Hyperlocal workers, on demand.</small>
         </span>
       </Link>
@@ -33,14 +33,14 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="footer-legal">
-        <p>© 2026 DailyWala. All rights reserved.</p>
+        <p>© 2026 Dailywala. All rights reserved.</p>
         <nav className="footer-links" aria-label="Legal information">
           <Link href="/terms/">Terms &amp; Conditions</Link>
           <Link href="/terms/#privacy-policy">Privacy</Link>
         </nav>
       </div>
       <div className="footer-actions">
-        <div className="store-links" aria-label="Download the DailyWala app">
+        <div className="store-links" aria-label="Download the Dailywala app">
           <span className="store-link" title="Google Play link coming soon">
             <svg className="play-badge-icon" viewBox="0 0 24 24" aria-hidden="true">
               <path className="play-blue" d="M4.1 2.9c-.3.3-.5.7-.5 1.2v15.8c0 .5.2.9.5 1.2l8.8-9.1-8.8-9.1Z" />
@@ -63,13 +63,13 @@ export function SiteFooter() {
             </span>
           </span>
         </div>
-        <div className="social-links" aria-label="DailyWala on social media">
+        <div className="social-links" aria-label="Dailywala on social media">
           <a
             className="social-link"
             href={siteConfig.socialLinks.facebook}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Follow DailyWala on Facebook"
+            aria-label="Follow Dailywala on Facebook"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M14.2 8.2h2.5V4.4c-.4-.1-1.9-.2-3.5-.2-3.5 0-5.8 2.1-5.8 6v3.4H3.7V18h3.7v5.8h4.5V18h3.7l.6-4.4h-4.3v-3c0-1.3.3-2.4 2.3-2.4Z" />
@@ -80,7 +80,7 @@ export function SiteFooter() {
             href={siteConfig.socialLinks.x}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Follow DailyWala on X at dailywala_in"
+            aria-label="Follow Dailywala on X at dailywala_in"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M14.5 10.2 22.2 1h-1.8l-6.7 8-5.3-8H2.2l8.1 12.1L2.2 23h1.8l7.1-8.5 5.7 8.5h6.2l-8.5-12.8Zm-2.5 3-1-.5L3.7 2.4h3.9l5.2 7.4 1 .5 7.7 11.3h-3.9L12 13.2Z" />
@@ -91,7 +91,7 @@ export function SiteFooter() {
             href={siteConfig.socialLinks.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Follow DailyWala on Instagram at dailywalaofficial"
+            aria-label="Follow Dailywala on Instagram at dailywalaofficial"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 3.4A4.6 4.6 0 1 1 12 16.6a4.6 4.6 0 0 1 0-9.2Zm0 2A2.6 2.6 0 1 0 12 14.6a2.6 2.6 0 0 0 0-5.2Zm5-2.6a1.1 1.1 0 1 1-1.1 1.1A1.1 1.1 0 0 1 17 6.8Z" />
@@ -118,7 +118,7 @@ export function ContactBand() {
       <div>
         <p className="eyebrow">Start with your requirement</p>
         <h2 id="contact-band-title">Need one worker - or an entire workforce?</h2>
-        <p>Share the service, work location, date, shift, and worker count. DailyWala can help you take the right next step.</p>
+        <p>Share the service, work location, date, shift, and worker count. Dailywala can help you take the right next step.</p>
       </div>
       <div className="contact-actions">
         <Link className="primary-action" href="/contact/">Post your requirement</Link>

@@ -7,18 +7,18 @@ const canonicalUrl = 'https://dailywala.in/terms';
 
 export const metadata: Metadata = {
   title: 'Terms and Conditions',
-  description: 'Read the DailyWala marketplace terms covering worker and crew bookings, wage estimates, overtime, payments, cancellations, safety, privacy, and grievances.',
+  description: 'Read the Dailywala marketplace terms covering worker and crew bookings, wage estimates, overtime, payments, cancellations, safety, privacy, and grievances.',
   alternates: { canonical: canonicalUrl },
   openGraph: {
     type: 'website',
     url: canonicalUrl,
-    title: 'Terms and Conditions | DailyWala',
-    description: 'Terms for using DailyWala as a customer, worker, contractor, or service partner.',
+    title: 'Terms and Conditions | Dailywala',
+    description: 'Terms for using Dailywala as a customer, worker, contractor, or service partner.',
   },
 };
 
 const sections = [
-  ['marketplace-role', 'DailyWala’s role'],
+  ['marketplace-role', 'Dailywala’s role'],
   ['accounts', 'Accounts and eligibility'],
   ['crew-assignment', 'Crew assignment and availability'],
   ['wages', 'Wage estimates and final wage'],
@@ -34,7 +34,7 @@ export default function TermsPage() {
   const termsPage = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'DailyWala Terms and Conditions',
+    name: 'Dailywala Terms and Conditions',
     url: canonicalUrl,
     dateModified: '2026-09-03',
     publisher: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.domain },
@@ -49,7 +49,7 @@ export default function TermsPage() {
             <p className="eyebrow">Clear terms. Fair expectations.</p>
             <h1 id="terms-page-title">Terms and Conditions</h1>
             <p>
-              These terms explain how DailyWala works for customers, workers, contractors, and other service partners.
+              These terms explain how Dailywala works for customers, workers, contractors, and other service partners.
               Please read them before creating an account, making a request, accepting work, or using the platform.
             </p>
           </div>
@@ -69,26 +69,26 @@ export default function TermsPage() {
               <p>
                 Worker availability can change. Displayed wages are estimates. Confirm the actual worker or crew, work
                 scope, duration, and final wage at the work site before work begins. Overtime is additional and is
-                payable at the applicable rate defined in the DailyWala system.
+                payable at the applicable rate defined in the Dailywala system.
               </p>
             </div>
 
             <section>
               <h2>1. Acceptance of these terms</h2>
               <p>
-                By accessing or using DailyWala’s website, applications, communications, or services, you agree to
-                these Terms and Conditions. “DailyWala”, “we”, “us”, and “our” refer to the operator of the DailyWala
+                By accessing or using Dailywala’s website, applications, communications, or services, you agree to
+                these Terms and Conditions. “Dailywala”, “we”, “us”, and “our” refer to the operator of the Dailywala
                 platform. “User” includes a customer, worker, contractor, crew leader, or other service partner.
               </p>
               <p>If you do not agree, do not use the platform. Mandatory rights available under applicable law remain unaffected.</p>
             </section>
 
             <section id="marketplace-role">
-              <h2>2. DailyWala’s marketplace role</h2>
+              <h2>2. Dailywala’s marketplace role</h2>
               <p>
-                DailyWala provides technology and operational support to help users discover, request, match, assign,
+                Dailywala provides technology and operational support to help users discover, request, match, assign,
                 coordinate, and pay for workforce services. Unless a specific service expressly states otherwise,
-                workers and service partners provide the work independently and are not employees of DailyWala,
+                workers and service partners provide the work independently and are not employees of Dailywala,
                 subject always to the actual relationship and applicable law.
               </p>
               <p>
@@ -112,14 +112,14 @@ export default function TermsPage() {
               <h2>4. Crew requests, assignment and availability</h2>
               <p>
                 A request records your requirement; it does not guarantee that every selected or displayed worker will
-                remain available. DailyWala may adjust, replace, reduce, or re-match workers when availability changes,
+                remain available. Dailywala may adjust, replace, reduce, or re-match workers when availability changes,
                 a worker declines, a verification or safety concern arises, or the requirement changes. We will provide
                 an assignment update through the app or your permitted communication channel where reasonably possible.
               </p>
               <p>
-                On arrival, the customer should check the assigned worker or crew details shown in DailyWala before
+                On arrival, the customer should check the assigned worker or crew details shown in Dailywala before
                 allowing work to begin. If an unexpected person arrives or the confirmed skill does not match the
-                request, pause the job and contact DailyWala support.
+                request, pause the job and contact Dailywala support.
               </p>
             </section>
 
@@ -133,7 +133,7 @@ export default function TermsPage() {
               <p>
                 After the actual worker or crew reaches the work site, the customer and service partner must mutually
                 confirm the final wage, scope, and expected duration before work begins. If no agreement is reached,
-                work should not begin; use DailyWala support to report or resolve the issue. Users must not demand or
+                work should not begin; use Dailywala support to report or resolve the issue. Users must not demand or
                 impose undisclosed or unauthorised charges.
               </p>
             </section>
@@ -142,7 +142,7 @@ export default function TermsPage() {
               <h2>6. Overtime and additional work</h2>
               <p>
                 Work beyond the scheduled working hours is overtime (“OT”). OT wages are additional to the confirmed
-                base wage and must be paid at the applicable rate defined in the DailyWala system. The customer and
+                base wage and must be paid at the applicable rate defined in the Dailywala system. The customer and
                 service partner should confirm overtime before the additional work begins.
               </p>
               <p>Material additions to the work scope may require a revised request, duration, crew, or price.</p>
@@ -151,7 +151,7 @@ export default function TermsPage() {
             <section id="payments">
               <h2>7. Payments, fees, cancellation and refunds</h2>
               <ul>
-                <li>Pay only through methods offered for the relevant DailyWala flow or as specifically instructed in the request.</li>
+                <li>Pay only through methods offered for the relevant Dailywala flow or as specifically instructed in the request.</li>
                 <li>Platform fees, taxes, worker amounts, discounts, and payment timing may vary by service and will be shown where applicable.</li>
                 <li>Cancellation charges or reduced refunds may apply after payment, assignment, travel, arrival, or work commencement.</li>
                 <li>Approved refunds are returned through the supported payment route and may take the processing time stated by the payment provider.</li>
@@ -173,7 +173,7 @@ export default function TermsPage() {
             <section>
               <h2>9. Reviews, content and platform use</h2>
               <p>
-                Reviews and information submitted by users must be truthful, relevant, and lawful. You grant DailyWala
+                Reviews and information submitted by users must be truthful, relevant, and lawful. You grant Dailywala
                 permission to host and display submitted content for operating and improving the platform. We may remove
                 misleading, abusive, unlawful, privacy-invasive, or manipulated content and may restrict accounts that
                 breach these terms or create safety, fraud, or legal risk.
@@ -183,7 +183,7 @@ export default function TermsPage() {
             <section id="privacy-policy">
               <h2>10. Privacy, location and communications</h2>
               <p>
-                We process information needed to operate DailyWala, including account and contact details, worker skills
+                We process information needed to operate Dailywala, including account and contact details, worker skills
                 and verification information, work locations, booking and assignment records, payment references,
                 consent choices, support messages, and device or usage data. We use it to authenticate users, match and
                 fulfil requests, process payments, prevent misuse, provide support, communicate service updates, comply
@@ -206,7 +206,7 @@ export default function TermsPage() {
             <section id="liability">
               <h2>11. Availability, warranties and responsibility</h2>
               <p>
-                DailyWala aims to provide a reliable platform, but availability, matching, arrival time, and work outcomes
+                Dailywala aims to provide a reliable platform, but availability, matching, arrival time, and work outcomes
                 depend on users and circumstances outside our reasonable control. The platform may occasionally be
                 interrupted for maintenance, security, network, provider, or operational reasons.
               </p>
@@ -221,12 +221,12 @@ export default function TermsPage() {
             <section id="grievances">
               <h2>12. Support, grievances and disputes</h2>
               <p>
-                Contact DailyWala support first so we can review the account, request, assignment, payment, safety, privacy,
+                Contact Dailywala support first so we can review the account, request, assignment, payment, safety, privacy,
                 or communication issue. Include the request ID and a clear description, but never send an OTP, password,
                 full card details, or other unnecessary sensitive information.
               </p>
               <div className="legal-contact">
-                <p><strong>Grievance contact:</strong> DailyWala Support</p>
+                <p><strong>Grievance contact:</strong> Dailywala Support</p>
                 <p><a href={`mailto:${siteConfig.supportEmail}`}>{siteConfig.supportEmail}</a></p>
                 <p><a href={siteConfig.phoneHref}>{siteConfig.phoneDisplay}</a></p>
               </div>
@@ -248,7 +248,7 @@ export default function TermsPage() {
 
             <div className="legal-endnote">
               <p>Questions about these terms?</p>
-              <Link className="primary-action" href="/contact/">Contact DailyWala</Link>
+              <Link className="primary-action" href="/contact/">Contact Dailywala</Link>
             </div>
             <p className="legal-effective">Effective and last updated: 3 September 2026</p>
           </article>
