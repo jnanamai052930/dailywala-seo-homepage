@@ -52,7 +52,6 @@ export default function TermsPage() {
               These terms explain how DailyWala works for customers, workers, contractors, and other service partners.
               Please read them before creating an account, making a request, accepting work, or using the platform.
             </p>
-            <p className="legal-effective">Effective and last updated: 3 September 2026</p>
           </div>
         </section>
 
@@ -251,6 +250,7 @@ export default function TermsPage() {
               <p>Questions about these terms?</p>
               <Link className="primary-action" href="/contact/">Contact DailyWala</Link>
             </div>
+            <p className="legal-effective">Effective and last updated: 3 September 2026</p>
           </article>
         </section>
       </main>

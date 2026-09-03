@@ -1808,7 +1808,7 @@ h3 {
 .legal-hero .eyebrow { color: #fde68a; }
 .legal-hero h1 { margin-bottom: 22px; color: white; font-size: clamp(2.8rem, 6vw, 5.3rem); }
 .legal-hero p:not(.eyebrow) { max-width: 780px; color: #ffedd5; font-size: 1.05rem; line-height: 1.75; }
-.legal-hero .legal-effective { margin: 26px 0 0; color: #fde68a; font-size: .78rem; font-weight: 850; letter-spacing: .04em; }
+.legal-effective { margin: 20px 0 0; color: #6f4a13; font-size: .78rem; font-weight: 850; letter-spacing: .04em; text-align: right; }
 
 .legal-shell {
   display: grid;
