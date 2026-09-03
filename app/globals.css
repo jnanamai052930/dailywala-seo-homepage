@@ -1285,26 +1285,24 @@ body {
   min-height: 72px;
   padding: 12px clamp(20px, 5vw, 76px);
   border-color: rgba(255, 255, 255, 0.12);
-  background: linear-gradient(
-    105deg,
-    #fff8dc 0%,
-    #ffe89a 25%,
-    #7890be 50%,
-    #294681 68%,
-    #142653 100%
-  );
+  background: #1b2d63;
 }
 
 .brand {
   gap: 9px;
-  color: #172554;
+  color: #ffffff;
   font-size: 25px;
   letter-spacing: -0.04em;
 }
 
 .brand img {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  filter: none;
 }
 
 .brand-lockup {
@@ -1315,7 +1313,7 @@ body {
 
 .brand-lockup small {
   margin-top: 4px;
-  color: #854d0e;
+  color: rgba(255, 255, 255, 0.76);
   font-size: 0.58rem;
   font-weight: 750;
   letter-spacing: 0;
@@ -1889,7 +1887,7 @@ h3 {
 
 @media (max-width: 520px) {
   .brand { font-size: 21px; }
-  .brand img { width: 32px; height: 32px; }
+  .brand img { width: 44px; height: 44px; }
   .brand-lockup small { font-size: 0.52rem; }
   .header-cta { min-height: 38px; padding: 9px 12px; font-size: .78rem; }
   .section { padding: 66px 18px; }
