@@ -38,7 +38,7 @@ export default function WhyUsPage() {
           <div className="hero-copy">
             <p className="hero-kicker"><span aria-hidden="true" /> Why DailyWala</p>
             <h1>A faster path to the right worker nearby</h1>
-            <p>
+            <p className="hero-lede">
               DailyWala organizes discovery around the requirement, work location, worker skill, and availability - not
               around posting a job and waiting for applications.
             </p>

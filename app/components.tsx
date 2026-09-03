@@ -32,7 +32,13 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="site-footer">
-      <p className="footer-legal">© 2026 DailyWala. All rights reserved.</p>
+      <div className="footer-legal">
+        <p>© 2026 DailyWala. All rights reserved.</p>
+        <nav className="footer-links" aria-label="Legal information">
+          <Link href="/terms/">Terms &amp; Conditions</Link>
+          <Link href="/terms/#privacy-policy">Privacy</Link>
+        </nav>
+      </div>
       <div className="footer-actions">
         <div className="store-links" aria-label="Download the DailyWala app">
           <span className="store-link" title="Google Play link coming soon">

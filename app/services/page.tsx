@@ -41,7 +41,7 @@ export default function ServicesPage() {
           <div>
             <p className="hero-kicker"><span aria-hidden="true" /> Book by service</p>
             <h1>Find Workers &amp; Services Near You</h1>
-            <p>
+            <p className="hero-lede">
               Choose a workforce category, share the work location and requirement, then discover suitable nearby
               workers - from one person to a complete crew.
             </p>
