@@ -58,7 +58,7 @@ export default function TermsPage() {
 
         <section className="legal-shell">
           <aside className="legal-toc" aria-label="Terms contents">
-            <strong>On this page</strong>
+            <strong>Terms &amp; Policies</strong>
             <ol>
               {sections.map(([id, label]) => <li key={id}><a href={`#${id}`}>{label}</a></li>)}
             </ol>
