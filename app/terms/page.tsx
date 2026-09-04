@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { JsonLd, SiteFooter, SiteHeader } from '../components';
 import { siteConfig } from '../siteConfig';
+import { LegalTableOfContents } from './LegalTableOfContents';
 
 const canonicalUrl = 'https://dailywala.in/terms';
 
@@ -56,12 +57,7 @@ export default function TermsPage() {
         </section>
 
         <section className="legal-shell">
-          <aside className="legal-toc" aria-label="Terms contents">
-            <strong>Terms &amp; Policies</strong>
-            <ol>
-              {sections.map(([id, label]) => <li key={id}><a href={`#${id}`}>{label}</a></li>)}
-            </ol>
-          </aside>
+          <LegalTableOfContents sections={sections} />
 
           <article className="legal-document" id="terms-of-use">
             <div className="legal-notice">
