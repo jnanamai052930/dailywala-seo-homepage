@@ -27,7 +27,7 @@ the generated `.open-next/worker.js`.
 - `/` home page
 - `/services/` services offered
 - `/contact/` contact page
-- `/open/?role=customer` and `/open/?role=worker` app handoff pages
+- `/open/?role=customer` and `/open/?role=worker` app coming-soon pages
 
 ## Contact Form Email
 
@@ -39,15 +39,14 @@ The contact form posts to `/api/contact/` and sends through Gmail SMTP with Node
 
 Google 2-Step Verification must be enabled before creating an App Password. The visitor's email is used only as the message `Reply-To` address. `keep_vars` is enabled in `wrangler.jsonc` so Git deployments preserve dashboard-managed secrets.
 
-## Deep-Link Production Checklist
+## Future App-Link Production Checklist
 
-The site already centralizes app links in `app/siteConfig.ts`.
-
-Before production deep links can fully open installed Android/iOS apps:
+The site currently keeps Android, iOS, and app-navigation entry points on a coming-soon page. Before enabling production deep links:
 
 - Add an Expo/native scheme such as `dailywala` in the mobile app config.
 - Add Android intent filters for `https://www.dailywala.in/open/`.
 - Add iOS associated domains for `applinks:www.dailywala.in`.
 - Publish `/.well-known/assetlinks.json` after the Android signing certificate fingerprint is known.
 - Publish `/.well-known/apple-app-site-association` after the Apple Team ID and Bundle ID are finalized.
-- Fill Play Store and App Store URLs in `app/siteConfig.ts` once public listings are live.
+- Add verified Play Store and App Store URLs once the public listings are live.
+- Replace the coming-soon behavior in `app/open/` only after both destination links are ready.

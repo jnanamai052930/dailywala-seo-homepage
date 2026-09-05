@@ -41,7 +41,7 @@ export function SiteFooter() {
       </div>
       <div className="footer-actions">
         <div className="store-links" aria-label="Download the Dailywala app">
-          <span className="store-link" title="Google Play link coming soon">
+          <span className="store-link" aria-label="Dailywala for Android coming soon">
             <svg className="play-badge-icon" viewBox="0 0 24 24" aria-hidden="true">
               <path className="play-blue" d="M4.1 2.9c-.3.3-.5.7-.5 1.2v15.8c0 .5.2.9.5 1.2l8.8-9.1-8.8-9.1Z" />
               <path className="play-green" d="m13.6 11.2 2.6-2.7L5.2 2.3l8.4 8.9Z" />
@@ -49,17 +49,17 @@ export function SiteFooter() {
               <path className="play-red" d="m17.2 9.1-2.8 2.9 2.8 2.9 2.3-1.3c1.1-.6 1.1-2.2 0-2.8l-2.3-1.7Z" />
             </svg>
             <span className="store-copy">
-              <span className="store-kicker">GET IT ON</span>
-              <span className="store-name">Google Play</span>
+              <span className="store-kicker">ANDROID APP</span>
+              <span className="store-name">Coming soon</span>
             </span>
           </span>
-          <span className="store-link" title="App Store link coming soon">
+          <span className="store-link" aria-label="Dailywala for iOS coming soon">
             <svg className="apple-badge-icon" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M16.4 2.2c.1 1.1-.3 2.1-1 2.9-.7.8-1.8 1.4-2.8 1.3-.1-1 .3-2 1-2.8.7-.8 1.9-1.3 2.8-1.4ZM20.7 17c-.4.9-.6 1.3-1.2 2.1-.8 1.2-2 2.8-3.5 2.8-1.3 0-1.7-.8-3.5-.8s-2.2.8-3.5.8c-1.5 0-2.6-1.4-3.5-2.6-2.4-3.5-2.7-7.6-1.2-9.8 1-1.5 2.6-2.4 4.2-2.4 1.6 0 2.7.9 4 .9s2.1-.9 4-.9c1.4 0 2.9.8 3.9 2.1-3.4 1.9-2.8 6.7.3 7.8Z" />
             </svg>
             <span className="store-copy">
-              <span className="store-kicker">Available on the</span>
-              <span className="store-name">App Store</span>
+              <span className="store-kicker">iOS APP</span>
+              <span className="store-name">Coming soon</span>
             </span>
           </span>
         </div>

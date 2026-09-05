@@ -1071,12 +1071,35 @@ button:hover {
   border-radius: 14px;
 }
 
+.launch-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  margin-bottom: 14px;
+  padding: 6px 12px;
+  border: 1px solid rgba(202, 138, 4, 0.28);
+  border-radius: 999px;
+  background: var(--brand-soft);
+  color: var(--brand-dark);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .open-panel h1 {
+  margin: 0 0 14px;
   font-size: 1.7rem;
 }
 
 .open-panel p {
+  margin: 0;
   color: var(--muted);
+}
+
+.open-panel .launch-note {
+  margin-top: 12px;
+  font-size: 0.9rem;
 }
 
 .centered {

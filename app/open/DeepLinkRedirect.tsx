@@ -1,41 +1,25 @@
-'use client';
-
-import { useEffect, useMemo } from 'react';
+import Link from 'next/link';
 import { DailywalaWordmark } from '../components';
-import { appLinks, type AppRole } from '../siteConfig';
 
-function roleFromSearch(): AppRole {
-  if (typeof window === 'undefined') return 'customer';
-  const role = new URLSearchParams(window.location.search).get('role');
-  return role === 'worker' ? 'worker' : 'customer';
-}
+type AppRole = 'customer' | 'worker';
 
-export function DeepLinkRedirect() {
-  const role = useMemo(roleFromSearch, []);
-  const links = appLinks[role];
-
-  useEffect(() => {
-    const ua = navigator.userAgent || '';
-    const isAndroid = /Android/i.test(ua);
-    const isIos = /iPhone|iPad|iPod/i.test(ua);
-    const target = isAndroid ? links.androidIntent : isIos ? links.deepLink : links.webFallback;
-    const fallback = isAndroid ? links.androidStore || links.webFallback : links.iosStore || links.webFallback;
-
-    window.location.href = target;
-    const timer = window.setTimeout(() => {
-      window.location.href = fallback;
-    }, 1400);
-
-    return () => window.clearTimeout(timer);
-  }, [links]);
+export function DeepLinkRedirect({ role }: { role: AppRole }) {
+  const audienceMessage = role === 'worker'
+    ? 'Soon, workers will be able to discover nearby opportunities and manage work from one simple app.'
+    : 'Soon, customers will be able to find and connect with trusted nearby workers from one simple app.';
 
   return (
     <div className="open-panel">
       <img src="/images/dailywala-app-icon.png" alt="" width="72" height="72" />
-      <h1>Opening <DailywalaWordmark className="inline-wordmark" /></h1>
-      <p>If the app does not open automatically, use the button below.</p>
+      <span className="launch-status">Android &amp; iOS apps</span>
+      <h1><DailywalaWordmark className="inline-wordmark" /> is coming soon</h1>
+      <p>{audienceMessage}</p>
+      <p className="launch-note">We’re putting the finishing touches on a reliable, secure experience. Thank you for your patience.</p>
       <div className="app-actions centered">
-        <a className="primary-action" href={links.deepLink}>Open app</a>
+        <Link className="primary-action" href="/contact/">
+          {role === 'worker' ? 'Contact Dailywala' : 'Post your requirement'}
+        </Link>
+        <Link className="secondary-action" href="/">Back to home</Link>
       </div>
     </div>
   );
